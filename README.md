@@ -13,7 +13,7 @@
 - Versão 1.1.1
 
 ## Colaboradores 
- - Elias
+ - Elias Maciel da Silva
  - Kênia Guimarães
  - Luis Oscar Resende
  - Neyde Karen Botelho
