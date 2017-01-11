@@ -17,3 +17,4 @@
  - Kênia Guimarães
  - Luis Oscar Resende
  - Neyde Karen Botelho
+ - Fernanda Cardoso Barros
