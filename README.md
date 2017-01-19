@@ -1,5 +1,7 @@
 # Laboratórios Compartilhados 
 
+[![Code Climate](https://codeclimate.com/github/labcompufba/labcompufba/badges/gpa.svg)](https://codeclimate.com/github/labcompufba/labcompufba)
+
  - [Apresentação](#apresentacao)
  - [Versão](#versao)
  - [Colaboradores](#colaboradores)
