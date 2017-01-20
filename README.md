@@ -1,6 +1,7 @@
 # Laboratórios Compartilhados UFBA 
 
 [![Code Climate](https://codeclimate.com/github/labcompufba/labcompufba/badges/gpa.svg)](https://codeclimate.com/github/labcompufba/labcompufba)
+[![Build Status](https://travis-ci.org/labcompufba/labcompufba.svg?branch=master)](https://travis-ci.org/labcompufba/labcompufba)
 
  - [Apresentação](#apresentacao)
  - [Versão](#versao)
