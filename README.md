@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/labcompufba/labcompufba.svg?branch=master)](https://travis-ci.org/labcompufba/labcompufba)
 
  - [Apresentação](#apresentacao)
- - [Obejtivos](#objetivos)
+ - [Objetivos](#objetivos)
  - [Versão](#versao)
  - [Colaboradores](#colaboradores)
  
@@ -14,7 +14,7 @@
 - Professor Rodrigo Rocha
 
 ## Objetivos
-- A prosposta do projeto é o controle e manutenção dos insumos  do laboratorios da UFBA.
+- A prosposta do projeto é o controle e manutenção dos insumos  dos laboratorios da UFBA.
 
 ## Versão
 - Versão 1.1.1
