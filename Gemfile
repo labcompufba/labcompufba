@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Bibliotecas de autenticacao
+gem 'devise'
+gem 'devise-i18n'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
