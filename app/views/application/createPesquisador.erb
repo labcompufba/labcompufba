@@ -1,2 +1,7 @@
 <h1> Cadastro Pesquisador </h1>
 Projeto de Enegenharia de Software 2016.2
+
+<h1>Alo <%= @nome %>!</h1>
+<% @pesquisadors.each do |disc| %>
+  <h1><%= disc.codigo %> - <%= disc.nome %></h1>
+<% end %>

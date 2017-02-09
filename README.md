@@ -25,3 +25,8 @@
  - Luis Oscar Resende
  - Neyde Karen Botelho
  - Fernanda Cardoso Barros
+  
+Dicas:
+  rails server -b $IP -p $PORT
+  rake db:migrate
+  bundle install

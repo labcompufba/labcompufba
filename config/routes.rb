@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'application#index'
   get '/pesquisador', to: 'pesquisador#index'
+  get '/pesquisador/show', to: 'pesquisador#show'
+  get '/pesquisador/edit', to: 'pesquisador#edit'
 end
