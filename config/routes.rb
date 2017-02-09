@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador/show', to: 'pesquisador#show'
   get '/pesquisador/edit', to: 'pesquisador#edit'
+  get '/equipamentos', to: 'equipamentos#index'  
 end
