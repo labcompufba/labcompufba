@@ -32,9 +32,9 @@
         <td><%= agendamento.data %></td>
         <td><%= agendamento.inicial %></td>
         <td><%= agendamento.final %></td>
-        <td><%= link_to 'Show', agendamento %></td>
-        <td><%= link_to 'Edit', edit_agendamento_path(agendamento) %></td>
-        <td><%= link_to 'Destroy', agendamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', agendamento %></td>
+        <td><%= link_to 'Editar', edit_agendamento_path(agendamento) %></td>
+        <td><%= link_to 'Excluir', agendamento, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

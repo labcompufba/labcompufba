@@ -28,7 +28,7 @@ class AgendamentosController < ApplicationController
 
     respond_to do |format|
       if @agendamento.save
-        format.html { redirect_to @agendamento, notice: 'Agendamento was successfully created.' }
+        format.html { redirect_to @agendamento, notice: 'Agendamento foi solicitado com sucesso.' }
         format.json { render :show, status: :created, location: @agendamento }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AgendamentosController < ApplicationController
   def update
     respond_to do |format|
       if @agendamento.update(agendamento_params)
-        format.html { redirect_to @agendamento, notice: 'Agendamento was successfully updated.' }
+        format.html { redirect_to @agendamento, notice: 'Agendamento foi atualizado com successo.' }
         format.json { render :show, status: :ok, location: @agendamento }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class AgendamentosController < ApplicationController
   def destroy
     @agendamento.destroy
     respond_to do |format|
-      format.html { redirect_to agendamentos_url, notice: 'Agendamento was successfully destroyed.' }
+      format.html { redirect_to agendamentos_url, notice: 'Agendamento foi excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
