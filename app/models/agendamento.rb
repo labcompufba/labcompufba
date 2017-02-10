@@ -1,0 +1,2 @@
+class Agendamento < ApplicationRecord
+end

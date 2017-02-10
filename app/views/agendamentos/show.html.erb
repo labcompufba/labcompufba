@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @agendamento.nome %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @agendamento.local %>
+</p>
+
+<p>
+  <strong>Laboratório:</strong>
+  <%= @agendamento.laboratório %>
+</p>
+
+<p>
+  <strong>Resumo do projeto:</strong>
+  <%= @agendamento.resumo %>
+</p>
+
+<p>
+  <strong>Bibliografia do projeto:</strong>
+  <%= @agendamento.bibliografia %>
+</p>
+
+<p>
+  <strong>Agência financiadora:</strong>
+  <%= @agendamento.agência %>
+</p>
+
+<p>
+  <strong>Número de amostras:</strong>
+  <%= @agendamento.número %>
+</p>
+
+<p>
+  <strong>Data requerida:</strong>
+  <%= @agendamento.data %>
+</p>
+
+<p>
+  <strong>Horário inicial:</strong>
+  <%= @agendamento.inicial %>
+</p>
+
+<p>
+  <strong>Horário final:</strong>
+  <%= @agendamento.final %>
+</p>
+
+<%= link_to 'Edit', edit_agendamento_path(@agendamento) %> |
+<%= link_to 'Back', agendamentos_path %>

@@ -9,7 +9,23 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 20170209004248) do
+
+ActiveRecord::Schema.define(version: 20170210043004) do
+
+  create_table "agendamentos", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "local"
+    t.string   "laboratório"
+    t.text     "resumo"
+    t.text     "bibliografia"
+    t.text     "agência"
+    t.integer  "número"
+    t.date     "data"
+    t.time     "inicial"
+    t.time     "final"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "pesquisadors", force: :cascade do |t|
     t.string   "codigo"

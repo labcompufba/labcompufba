@@ -1,0 +1,67 @@
+<%= form_for(agendamento) do |f| %>
+  <% if agendamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(agendamento.errors.count, "error") %> prohibited this agendamento from being saved:</h2>
+
+      <ul>
+      <% agendamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :local %>
+    <%= f.text_field :local %>
+  </div>
+
+  <div class="field">
+    <%= f.label :laboratório %>
+    <%= f.text_field :laboratório %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resumo %>
+    <%= f.text_area :resumo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bibliografia %>
+    <%= f.text_area :bibliografia %>
+  </div>
+
+  <div class="field">
+    <%= f.label :agência %>
+    <%= f.text_area :agência %>
+  </div>
+
+  <div class="field">
+    <%= f.label :número %>
+    <%= f.number_field :número %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data %>
+    <%= f.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= f.label :inicial %>
+    <%= f.time_select :inicial %>
+  </div>
+
+  <div class="field">
+    <%= f.label :final %>
+    <%= f.time_select :final %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

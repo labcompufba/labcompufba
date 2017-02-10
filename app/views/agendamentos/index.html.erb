@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Equipamentos agendados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Local</th>
+      <th>Laboratório</th>
+      <th>Resumo do projeto</th>
+      <th>Bibliografia do projeto</th>
+      <th>Agência financiadora</th>
+      <th>Número de amostras</th>
+      <th>Data requerida</th>
+      <th>Horário inicial</th>
+      <th>Horário final</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @agendamentos.each do |agendamento| %>
+      <tr>
+        <td><%= agendamento.nome %></td>
+        <td><%= agendamento.local %></td>
+        <td><%= agendamento.laboratório %></td>
+        <td><%= agendamento.resumo %></td>
+        <td><%= agendamento.bibliografia %></td>
+        <td><%= agendamento.agência %></td>
+        <td><%= agendamento.número %></td>
+        <td><%= agendamento.data %></td>
+        <td><%= agendamento.inicial %></td>
+        <td><%= agendamento.final %></td>
+        <td><%= link_to 'Show', agendamento %></td>
+        <td><%= link_to 'Edit', edit_agendamento_path(agendamento) %></td>
+        <td><%= link_to 'Destroy', agendamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo agendamento', new_agendamento_path %>

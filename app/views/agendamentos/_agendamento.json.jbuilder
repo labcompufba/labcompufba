@@ -1,0 +1,2 @@
+json.extract! agendamento, :id, :nome, :local, :laboratório, :resumo, :bibliografia, :agência, :número, :data, :inicial, :final, :created_at, :updated_at
+json.url agendamento_url(agendamento, format: :json)

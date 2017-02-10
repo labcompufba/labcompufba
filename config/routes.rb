@@ -4,6 +4,7 @@
 #end
 
 Rails.application.routes.draw do
+  resources :agendamentos
   devise_for :users
   root 'application#index'
   get '/pesquisador', to: 'pesquisador#index'
