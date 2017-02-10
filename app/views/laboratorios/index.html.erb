@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Laboratorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Integer</th>
+      <th>Descricao</th>
+      <th>Local</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laboratorios.each do |laboratorio| %>
+      <tr>
+        <td><%= laboratorio.codigo %></td>
+        <td><%= laboratorio.descricao %></td>
+        <td><%= laboratorio.local %></td>
+        <td><%= link_to 'Show', laboratorio %></td>
+        <td><%= link_to 'Edit', edit_laboratorio_path(laboratorio) %></td>
+        <td><%= link_to 'Destroy', laboratorio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Laboratorio', new_laboratorio_path%>
