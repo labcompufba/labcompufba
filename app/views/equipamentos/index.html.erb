@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Equipamentos</h1>
 
-<table>
+
+<div id="list" class="row">
+
+<div class="table-responsive col-md-12">
+<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
   <thead>
     <tr>
-      <th>Codigo</th>
-      <th>Descricao</th>
+      <th>Código </th>
+      <th>Descrição </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,14 +19,17 @@
       <tr>
         <td><%= equipamento.codigo %></td>
         <td><%= equipamento.descricao %></td>
-        <td><%= link_to 'Show', equipamento %></td>
-        <td><%= link_to 'Edit', edit_equipamento_path(equipamento) %></td>
-        <td><%= link_to 'Destroy', equipamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="actions">
+          <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', equipamento %> </a>
+          <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_equipamento_path(equipamento) %></a>
+          <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', equipamento, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+          </td> 
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
 <br>
 
-<%= link_to 'New Equipamento', new_equipamento_path %>
+<a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>

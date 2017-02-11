@@ -12,13 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :codigo %>
+    <table>
+    <tr>  
+    <td>
+    <%= f.label  :codigo %>
     <%= f.number_field :codigo %>
-  </div>
-
-  <div class="field">
+    </td>
+    <td>
     <%= f.label :descricao %>
     <%= f.text_field :descricao %>
+    </td>
+     <tr> 
+    </table>
+    </div>
+
+  <div class="field">
+   
   </div>
 
   <div class="actions">

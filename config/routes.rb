@@ -5,9 +5,8 @@
 
 Rails.application.routes.draw do
   
-
-  resources :equipas
   devise_for :users
+  
   resources :application
   root 'application#index'
   resources :laboratorios
@@ -16,6 +15,12 @@ Rails.application.routes.draw do
   root 'equipamentos#index'
   resources :equipas
   root 'equipas#index'
+  get '/pesquisador', to: 'pesquisador#index'
+  get '/pesquisador', to: 'pesquisador#index'
+  get '/pesquisador/show', to: 'pesquisador#show'
+  get '/pesquisador/edit', to: 'pesquisador#edit'
+ 
+
 
 
 end
