@@ -1,7 +1,48 @@
 require 'test_helper'
 
 class EquipamentosControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @equipamento = equipamentos(:one)
+  end
+
+  test "should get index" do
+    get equipamentos_url
+    assert_response :success
+  end
+
+  test "should get new" do
+    get new_equipamento_url
+    assert_response :success
+  end
+
+  test "should create equipamento" do
+    assert_difference('Equipamento.count') do
+      post equipamentos_url, params: { equipamento: { codigo: @equipamento.codigo, descricao: @equipamento.descricao } }
+    end
+
+    assert_redirected_to equipamento_url(Equipamento.last)
+  end
+
+  test "should show equipamento" do
+    get equipamento_url(@equipamento)
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get edit_equipamento_url(@equipamento)
+    assert_response :success
+  end
+
+  test "should update equipamento" do
+    patch equipamento_url(@equipamento), params: { equipamento: { codigo: @equipamento.codigo, descricao: @equipamento.descricao } }
+    assert_redirected_to equipamento_url(@equipamento)
+  end
+
+  test "should destroy equipamento" do
+    assert_difference('Equipamento.count', -1) do
+      delete equipamento_url(@equipamento)
+    end
+
+    assert_redirected_to equipamentos_url
+  end
 end

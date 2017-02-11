@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @equipamento.codigo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @equipamento.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_equipamento_path(@equipamento) %> |
+<%= link_to 'Back', equipamentos_path %>

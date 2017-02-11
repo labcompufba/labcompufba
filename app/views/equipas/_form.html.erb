@@ -1,0 +1,27 @@
+<%= form_for(equipa) do |f| %>
+  <% if equipa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(equipa.errors.count, "error") %> prohibited this equipa from being saved:</h2>
+
+      <ul>
+      <% equipa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo %>
+    <%= f.number_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descricao %>
+    <%= f.text_field :descricao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

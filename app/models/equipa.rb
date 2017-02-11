@@ -1,0 +1,2 @@
+class Equipa < ApplicationRecord
+end

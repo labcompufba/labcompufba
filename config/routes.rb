@@ -5,15 +5,17 @@
 
 Rails.application.routes.draw do
   
+
+  resources :equipas
   devise_for :users
+  resources :application
   root 'application#index'
-  get '/pesquisador', to: 'pesquisador#index'
-  get '/pesquisador/show', to: 'pesquisador#show'
-  get '/pesquisador/edit', to: 'pesquisador#edit'
-  get '/equipamentos', to: 'equipamentos#index'  
-  
-   resources :laboratorios
+  resources :laboratorios
   root 'laboratorios#index'
+  resources :equipamentos
+  root 'equipamentos#index'
+  resources :equipas
+  root 'equipas#index'
 
 
 end
