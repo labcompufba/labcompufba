@@ -1,53 +1,43 @@
 <!doctype html>
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
-  
-<html>
-
-  <body>
-    <title>Laboratórios Compartilhados</title>
-   
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-       <div class="collapse navbar-collapse" align = "center">
-       <img src=" http://i86.photobucket.com/albums/k115/keniaguimaraes/topo_zpsfycl41qy.png" width= "100%" height="80" border="0" alt=" photo Imagem1_zpsubtbcjet.png"/></a>
+<%=stylesheet_link_tag 'application', media: 'all','data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+    <html>
         
-       <div>
-         
-  <div class="container">
-  
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Home</a>
-      <a class="navbar-brand" href="/equipamentos">Equipamentos</a>
-      <a class="navbar-brand" href="/">Sobre</a>
-</a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-    
-      </ul>
-    </div>
-    
-  </div>
-</nav>
-     
-             
-<div class="container">
-  <%= yield %>
-</div>
+        <body>
+            <title>Laboratórios Compartilhados</title>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="collapse navbar-collapse" align="center">
+                   <h3><a class="h3"  href="" >Laboratórios Compartilhados UFBA</a><h3>
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">
+                                        Toggle navigation
+                                    </span>
+                                    <span class="icon-bar"> </span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar">/span>
+                                    <span class="icon-bar">/span>
+                                </button>
+                                <a class="navbar-brand" href="/">Home</a>
+                                <a class="navbar-brand" href="/equipamentos">Equipamentos</a>
+                                <a class="navbar-brand" href="/">Sobre</a>
+                            </div>
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                </ul>
+                            </div>
+            </nav>
+            <div class="container">
+                <%=yield %>
             </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
-  </body>
-</html>
+            <footer>
+            </footer>
+            </div>
+            </div>
+            <!--! end of .container -->
+            <!--! end of #main -->
+        </body>
+    
+    </html>
