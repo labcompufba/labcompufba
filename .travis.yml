@@ -1,7 +1,7 @@
 language: ruby
+sudo: required
 rvm:
   - 2.3.0
 script:
   - bundle exec rake db:migrate
   - bundle exec rake
-  - sudo: required
