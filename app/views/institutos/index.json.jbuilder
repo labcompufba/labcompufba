@@ -1,0 +1,1 @@
+json.array! @institutos, partial: 'institutos/instituto', as: :instituto

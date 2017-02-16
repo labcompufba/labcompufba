@@ -1,0 +1,2 @@
+class Instituto < ApplicationRecord
+end

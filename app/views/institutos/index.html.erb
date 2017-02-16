@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div id="list" class="row">
+
+<div class="table-responsive col-md-12">
+<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institutos.each do |instituto| %>
+      <tr>
+        <td><%= instituto.cod_inst %></td>
+        <td><%= instituto.nome %></td>
+        <td><%= instituto.endereco %></td>
+        <td class="actions">
+          <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', instituto %> </a>
+          <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_instituto_path(instituto) %></a>
+          <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', instituto, method: :destroy, data: { confirm: 'Are you sure?' } %></a>
+        </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+<br>
+
+<a class="btn btn-primary btn-sm" <%= link_to 'Novo Instituto', new_instituto_path %></a>

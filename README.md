@@ -7,6 +7,7 @@
  - [Objetivos](#objetivos)
  - [Versão](#versao)
  - [Colaboradores](#colaboradores)
+ - [Dicas](#dicas)
  
 ## Apresentacao 
 - Projeto de Laboratórios Compartilhados da UFBA
@@ -25,8 +26,8 @@
  - Luis Oscar Resende
  - Neyde Karen Botelho
  - Fernanda Cardoso Barros
-  
-Dicas:
+ - 
+## Dicas
   rails server -b $IP -p $PORT
   rake db:migrate
   bundle install

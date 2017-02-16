@@ -1,0 +1,32 @@
+<%= form_for(instituto) do |f| %>
+  <% if instituto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(instituto.errors.count, "error") %> prohibited this instituto from being saved:</h2>
+
+      <ul>
+      <% instituto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table>
+  <div class="field">
+    <%= f.label :Codigo %>
+    <%= f.number_field :cod_inst %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Endereço%>
+    <%= f.text_area :endereco %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
