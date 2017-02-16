@@ -17,7 +17,7 @@
 ## Objetivos
 - A prosposta do projeto é o controle e manutenção dos insumos  dos laboratorios da UFBA.
 
-## Versão
+## Versao
 - Versão 1.1.1
 
 ## Colaboradores 
@@ -26,8 +26,8 @@
  - Luis Oscar Resende
  - Neyde Karen Botelho
  - Fernanda Cardoso Barros
- - 
+ 
 ## Dicas
-  rails server -b $IP -p $PORT
-  rake db:migrate
-  bundle install
+ - rails server -b $IP -p $PORT
+ - rake db:migrate
+ - bundle install
