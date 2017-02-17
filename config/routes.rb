@@ -3,6 +3,7 @@
 #  root to: redirect('/posts')
 #end
 Rails.application.routes.draw do
+
   devise_for :users
   resources :application
   root 'application#index'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   root 'equipamentos#index'
   resources :institutos
   root 'institutos#index'
+
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador/show', to: 'pesquisador#show'

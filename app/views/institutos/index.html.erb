@@ -21,7 +21,8 @@
         <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', instituto %> </a>
           <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_instituto_path(instituto) %></a>
-          <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', instituto, method: :destroy, data: { confirm: 'Are you sure?' } %></a>
+          <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', instituto, method: :destroy, data:{ confirm: 'Are you sure?' } %></a>
+          
         </td>
      </tr>
     <% end %>
