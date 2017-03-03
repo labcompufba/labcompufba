@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-   # GET /institutos
+
+  #protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
+ 
+  # GET /institutos
   # GET /institutos.json
  def index
       @institutos =  Instituto.all
