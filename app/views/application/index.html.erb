@@ -11,10 +11,14 @@
   </thead>
 
   <tbody>
+        <% @institutos.each do |instituto| %>
       <tr>
-        <td></td>
+        <td> <%= instituto.nome %>
+        <td><td>
+        <td><td>
+        <td><a href="/institutos">Laboratorios</a></td>
      </tr>
- 
+    <% end %>
   </tbody>
 </table>
 </div>

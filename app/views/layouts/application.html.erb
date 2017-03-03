@@ -1,52 +1,69 @@
 <!doctype html>
 <%=stylesheet_link_tag 'application', media: 'all','data-turbolinks-track': 'reload' %>
-    <html>
-        <header>
-             <meta name="viewport" content="width=device-width, initial-scale=1">
-              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-               <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
-            </header>
-        <body>
-            <title>Laboratórios Compartilhados</title>
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="collapse navbar-collapse" align="center">
-
-                   <h3><a class="h3"  href="" >Laboratórios Compartilhados UFBA</a><h3>
-                        <div class="container">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="sr-only">
-                                        Toggle navigation
-                                    </span>
-                                    <span class="icon-bar"> </span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand" href="/">Home</a>
-                                <div class="dropdown">
-                                <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros
-                                <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="/equipamentos">Equipamentos</a></li>
-                           
-               
-                                  <li><a href="/institutos">Institutos</a></li>
-                                </ul>
-                              </div>
-                             <a class="navbar-brand" href="/">Sobre</a>
-                          
-                                    </nav>
-            <div class="container">
-                <%=yield %>
-            </div>
-            <footer class="container-fluid text-center">
-            </footer>
-            </div>
-            </div>
-            <!--! end of .container -->
-            <!--! end of #main -->
-        </body>
-    
-    </html>
+<html>
+<header>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+</header>
+<body>
+<title>Laboratórios Compartilhados</title>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar-collapse collapse"align="center">
+ <h3> <a class="h3"  href="" a>Laboratórios Compartilhados UFBA</a></h3>
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" > 
+		<span class="sr-only"> Toggle navigation </span> 
+		<span class="icon-bar"> </span> 
+		<span class="icon-bar"></span> 
+    </button>
+  <a class="navbar-brand" href="/">Home</a> 
+  <a class="navbar-brand navbar-right" href="">Login</a> 
+	<a class="navbar-brand navbar-right" href=""></a>
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+  <a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+	<a class="navbar-brand navbar-right" href=""></a> 
+    <div class="dropdown"> 
+	 <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros     <span class="caret"></span></a>
+      <ul class="dropdown-menu" >
+        <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
+        <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
+        <li><a class="glyphicon glyphicon-book" href="/"> <span class = "p"> Laboratórios</span></a></li>
+        <li><a class="glyphicon glyphicon-calendar" href="/"> <span class = "p"> Reserva</span></a></li>
+      </ul>
+    </div>
+    </li>
+    </ul>
+     </nav>
+	<div class="container"> 
+	   <%=yield %> 
+	</div>
+    <footer class="container-fluid text-center"> 
+	</footer>
+  </div>
+</div>
+</body>
+</html>
