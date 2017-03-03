@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :application
   root 'application#index'
+  resources :laboratorios
   root 'laboratorios#index'
   resources :equipamentos
   root 'equipamentos#index'

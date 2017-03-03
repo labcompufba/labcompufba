@@ -1,5 +1,3 @@
-<%= javascript_include_tag "application" %>
-
 <!doctype html>
 <%=stylesheet_link_tag 'application', media: 'all','data-turbolinks-track': 'reload' %>
 <html>
@@ -9,6 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+
 </header>
 <body>
 <title>Laboratórios Compartilhados</title>
@@ -49,7 +48,8 @@
 	<a class="navbar-brand navbar-right" href=""></a> 
 	<a class="navbar-brand navbar-right" href=""></a> 
     <div class="dropdown"> 
-	 <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros     <span class="caret"></span></a>
+	 <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros
+	 <span class="caret"></span></a>
       <ul class="dropdown-menu" >
         <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
         <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
@@ -61,7 +61,7 @@
     </ul>
      </nav>
 	<div class="container"> 
-	   <%=yield %> 
+	   <%=yield%> 
 	</div>
     <footer class="container-fluid text-center"> 
 	</footer>
