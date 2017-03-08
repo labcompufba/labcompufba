@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod_lab: 1
+  cod_inst: 1
+  nome: MyString
+  local: MyText
+
+two:
+  cod_lab: 1
+  cod_inst: 1
+  nome: MyString
+  local: MyText
