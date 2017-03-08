@@ -1,2 +1,3 @@
-class Laboratorio < ApplicationRecord
+class Laboratorio  < ApplicationRecord
+
 end

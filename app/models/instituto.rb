@@ -1,2 +1,4 @@
-class Instituto < ApplicationRecord
+class Instituto  < ApplicationRecord
+
+  
 end

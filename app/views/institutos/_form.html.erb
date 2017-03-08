@@ -10,23 +10,31 @@
       </ul>
     </div>
   <% end %>
+  
 <table>
-  <div class="field">
-    <%= f.label :Codigo %>
-    <%= f.number_field :cod_inst %>
-  </div>
+  
+  <tr colspan="3">
+   <td> <%= f.label :Codigo %></td>
+   <td class="col-md-9" ><%= f.number_field :cod_inst %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+  <tr>
+   <td> <%= f.label :Nome %></td>
+   <td class="col-md-9" width="100" > <%= f.text_field :nome %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+  <tr>
+   <td> <%= f.label :Endereço%></td>
+   <td class="col-md-9" > <%= f.text_area :endereco %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+</table>  
 
-  <div class="field">
-    <%= f.label :Nome %>
-    <%= f.text_field :nome %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Endereço%>
-    <%= f.text_area :endereco %>
-  </div>
-
-  <div class="actions">
+  <div class="btn btn-inverse btn-sm">
     <%= f.submit %>
   </div>
+  
 <% end %>
