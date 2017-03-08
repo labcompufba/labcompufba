@@ -1,0 +1,1 @@
+json.partial! "labequips/labequip", labequip: @labequip

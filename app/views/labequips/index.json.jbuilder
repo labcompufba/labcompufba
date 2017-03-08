@@ -1,0 +1,1 @@
+json.array! @labequips, partial: 'labequips/labequip', as: :labequip

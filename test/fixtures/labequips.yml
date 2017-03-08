@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod_lab: 1
+  cod_equip: 1
+  quantidade: 1
+
+two:
+  cod_lab: 1
+  cod_equip: 1
+  quantidade: 1

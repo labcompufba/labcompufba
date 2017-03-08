@@ -1,0 +1,25 @@
+HEROKU
+------------------------------------------------------------------------------------------
+Verificar seus repositorios: 
+ 
+git remote -v
+
+- Você deve ver algo parecido com:
+origin git@heroku.com:evening-brook-3751.git (fetch)
+origin git@heroku.com:evening-brook-3751.git (push)
+
+- Aqui temos os repositorios origins do projeto.Para adicionar um repositorio heroku ao projeto  usar:
+
+heroku git:remote -a evening-brook-3751
+
+
+SCAFFOLD
+---------------------------------------------------------------------------------------------
+rails generate scaffold ou rails g scaffold 
+rails detroy scaffold ou rails d scaffold 
+
+
+DEVISE
+---------------------------------------------------------------------------------------------
+rails destroy devise:install
+rails destroy devise User

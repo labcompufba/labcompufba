@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div id="list" class="row">
+
+<div class="table-responsive col-md-12">
+<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+  <thead>
+    
+    <tr>
+      <th>Laboratório</th>
+      <th>Equipamento</th>
+      <th>Quantidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @labequips.each do |labequip| %>
+      <tr>
+        <td><%= labequip.cod_lab %></td>
+        <td><%= labequip.cod_equip %></td>
+        <td><%= labequip.quantidade %></td>
+        <td class="actions">
+          <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', labequip %> </a>
+          <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_labequip_path(labequip) %></a>
+          <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', labequip, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
+           <a class="btn btn-primary btn-xs" href="/labequips "> Equipamentos</a>
+        </td>
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', new_labequip_path %></a>

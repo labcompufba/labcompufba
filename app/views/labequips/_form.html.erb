@@ -1,0 +1,37 @@
+<%= form_for(labequip) do |f| %>
+  <% if labequip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(labequip.errors.count, "error") %> prohibited this labequip from being saved:</h2>
+
+      <ul>
+      <% labequip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table >
+   <tr>
+     <td><%= f.label :Laboratório %> </td>
+     <td class="col-md-9" > <%= collection_select(:labequip, :cod_lab, @laboratorios, :id, :nome, prompt: true) %></td>
+   </tr>
+   <tr><td><br></td></tr>
+ 
+    <tr>
+      <td><%= f.label :Equipamento %></td>
+       <td class="col-md-9" ><%= collection_select(:labequip, :cod_equip, @equipamentos, :id, :descricao, prompt: true) %></td>
+    </tr>
+    <tr><td><br></td></tr>
+
+    <tr>
+      <td> <%= f.label :quantidade %></td>
+      <td class="col-md-9" ><%= f.number_field :quantidade %></td>
+    </tr>
+    <tr><td><br></td></tr>
+    
+</table>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -4,7 +4,7 @@
 #end
 Rails.application.routes.draw do
 
-  devise_for :users
+  
   resources :application
   root 'application#index'
   resources :laboratorios
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   root 'laboratorios#index'
   resources :laboratorios
   root 'institutos#index'
+  resources :labequips
+   root 'labequips#index'
+  
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador/show', to: 'pesquisador#show'
