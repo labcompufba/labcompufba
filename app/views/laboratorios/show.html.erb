@@ -1,27 +1,23 @@
 <p id="notice"><%= notice %></p>
 <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
   <thead>
-    <tr>
+<tr>
 <p>
   <strong>Cod lab:</strong>
   <%= @laboratorio.cod_lab %>
 </p>
-
 <p>
   <strong>Cod inst:</strong>
   <%= @laboratorio.cod_inst %>
 </p>
-
 <p>
   <strong>Nome:</strong>
   <%= @laboratorio.nome %>
 </p>
-
 <p>
   <strong>Local:</strong>
   <%= @laboratorio.local %>
 </p>
-</tr>
-   </table>
+</table>
 
 <a class="btn btn-inverse btn-sm" <%= link_to 'Voltar', laboratorios_path %></a>

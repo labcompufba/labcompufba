@@ -20,6 +20,8 @@ class LaboratoriosController < ApplicationController
 
   # GET /laboratorios/1/edit
   def edit
+     @laboratorio = Laboratorio.find(params[:id])
+     @institutos = Instituto.all
   end
 
   # POST /laboratorios
