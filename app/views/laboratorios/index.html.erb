@@ -18,7 +18,7 @@
     
     <% @laboratorios.each do |laboratorio| %>
       <tr>
-        <td><%= laboratorio.instituto_id%></td>
+        <td><%= laboratorio.instituto.sigla%></td>
         <td><%= laboratorio.nome %></td>
         <td><%= laboratorio.local %></td>
         <td><%= laboratorio.sigla %></td>
