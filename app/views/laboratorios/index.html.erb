@@ -9,20 +9,19 @@
       <th>Instituto</th>
       <th>Nome</th>
       <th>Local</th>
+      <th>Sigla</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     
-
-    
-    
     <% @laboratorios.each do |laboratorio| %>
       <tr>
         <td><%= laboratorio.instituto.sigla %></td>
         <td><%= laboratorio.nome %></td>
         <td><%= laboratorio.local %></td>
+        <td><%= laboratorio.sigla %></td>
          <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', laboratorio %> </a>
           <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></a>
