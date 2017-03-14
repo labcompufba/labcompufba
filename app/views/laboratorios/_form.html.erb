@@ -12,8 +12,6 @@
   <% end %>
   
 <table >
-
- 
   <tr>
     <td> <%= f.label :nome %></td>
     <td class="col-md-9" ><%= f.text_field :nome %></td>
@@ -34,7 +32,7 @@
 
   <tr>
     <td><%= f.label :Instituto %></td>
-    <td><%= collection_select(:laboratorio, :instituto_id, @institutos, :id, :nome, prompt: "SELECIONE") %></td>
+    <td><%= collection_select(:laboratorio, :instituto_id, @institutos, :id, :nome, prompt: "true") %></td>
   <tr>
  <tr><td><br></td></tr>
  
