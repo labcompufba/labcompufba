@@ -17,7 +17,7 @@ class InstitutosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create instituto" do
     assert_difference('Instituto.count') do
-      post institutos_url, params: { instituto: { cod_inst: @instituto.cod_inst, endereco: @instituto.endereco, nome: @instituto.nome } }
+      post institutos_url, params: { instituto: { local: @instituto.local, nome: @instituto.nome, sigla: @instituto.sigla } }
     end
 
     assert_redirected_to instituto_url(Instituto.last)
@@ -34,7 +34,7 @@ class InstitutosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update instituto" do
-    patch instituto_url(@instituto), params: { instituto: { cod_inst: @instituto.cod_inst, endereco: @instituto.endereco, nome: @instituto.nome } }
+    patch instituto_url(@instituto), params: { instituto: { local: @instituto.local, nome: @instituto.nome, sigla: @instituto.sigla } }
     assert_redirected_to instituto_url(@instituto)
   end
 

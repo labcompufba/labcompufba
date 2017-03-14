@@ -17,7 +17,7 @@ class EquipamentosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create equipamento" do
     assert_difference('Equipamento.count') do
-      post equipamentos_url, params: { equipamento: { codigo: @equipamento.codigo, descricao: @equipamento.descricao } }
+      post equipamentos_url, params: { equipamento: { descricao: @equipamento.descricao } }
     end
 
     assert_redirected_to equipamento_url(Equipamento.last)
@@ -34,7 +34,7 @@ class EquipamentosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update equipamento" do
-    patch equipamento_url(@equipamento), params: { equipamento: { codigo: @equipamento.codigo, descricao: @equipamento.descricao } }
+    patch equipamento_url(@equipamento), params: { equipamento: { descricao: @equipamento.descricao } }
     assert_redirected_to equipamento_url(@equipamento)
   end
 

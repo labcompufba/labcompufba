@@ -1,3 +1,3 @@
-class Laboratorio  < ApplicationRecord
-
+class Laboratorio < ApplicationRecord
+    belongs_to :instituto
 end

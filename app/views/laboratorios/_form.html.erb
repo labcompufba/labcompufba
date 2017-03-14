@@ -12,17 +12,7 @@
   <% end %>
   
 <table >
-  <tr>
-     <td><%= f.label :Código %></td>
-     <td class="col-md-9" ><%= f.number_field :cod_lab %></td>
-  </tr>
-  <tr><td><br></td></tr>
 
-   <tr>
-    <td><%= f.label :Instituto %></td>
-    <td><%= collection_select(:laboratorio, :cod_inst, @institutos, :id, :nome, prompt: true) %></td>
-  <tr>
- <tr><td><br></td></tr>
  
   <tr>
     <td> <%= f.label :nome %></td>
@@ -31,10 +21,23 @@
   <tr><td><br></td></tr>
   
   <tr>
+    <td> <%= f.label :sigla %></td>
+    <td class="col-md-9" ><%= f.text_field :sigla %></td>
+  <tr>
+  <tr><td><br></td></tr>
+  
+  <tr>
    <td><%= f.label :local %></td>
    <td class="col-md-9"> <%= f.text_area :local %></td>
   <tr>
   <tr><td><br></td></tr>
+
+  <tr>
+    <td><%= f.label :Instituto %></td>
+    <td><%= collection_select(:laboratorio, :instituto_id, @institutos, :id, :nome, prompt: "SELECIONE") %></td>
+  <tr>
+ <tr><td><br></td></tr>
+ 
 </table>
 
   <div class="actions">

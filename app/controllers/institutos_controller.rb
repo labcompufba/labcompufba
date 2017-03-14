@@ -69,6 +69,6 @@ class InstitutosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instituto_params
-      params.require(:instituto).permit(:cod_inst, :nome, :endereco)
+      params.require(:instituto).permit(:nome, :sigla, :local)
     end
 end

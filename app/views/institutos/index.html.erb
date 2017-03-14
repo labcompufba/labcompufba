@@ -6,9 +6,9 @@
 <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
   <thead>
     <tr>
-      <th>Codigo</th>
       <th>Nome</th>
-      <th>Endereço</th>
+      <th>Sigla</th>
+      <th>Local</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
   <tbody>
     <% @institutos.each do |instituto| %>
       <tr>
-        <td><%= instituto.cod_inst %></td>
         <td><%= instituto.nome %></td>
-        <td><%= instituto.endereco %></td>
+         <td><%= instituto.sigla %></td>
+        <td><%= instituto.local %></td>
         <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', instituto %> </a>
           <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_instituto_path(instituto) %></a>

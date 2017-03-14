@@ -1,8 +1,6 @@
-<div id="main" class="container-fluid">
- <h4 class="page-header">Editar Item</h4>
+<h1>Editing Equipamento</h1>
 
 <%= render 'form', equipamento: @equipamento %>
 
-<a class="btn btn-inverse btn-sm" <%= link_to 'Voltar', equipamentos_path %></a>
-
-</div>
+<%= link_to 'Show', @equipamento %> |
+<%= link_to 'Back', equipamentos_path %>

@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   resources :equipamentos
   root 'equipamentos#index'
   resources :institutos
-  root 'laboratorios#index'
-  resources :laboratorios
   root 'institutos#index'
   resources :labequips
-   root 'labequips#index'
+  root 'labequips#index'
   
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador', to: 'pesquisador#index'

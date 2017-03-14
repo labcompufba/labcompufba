@@ -1,13 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Código:</strong>
-  <%= @equipamento.codigo %>
-</p>
-
-<p>
-  <strong>Descrição:</strong>
+  <strong>Descricao:</strong>
   <%= @equipamento.descricao %>
 </p>
 
-<a class="btn btn-inverse btn-sm" <%= link_to 'Voltar', equipamentos_path %></a>
+<%= link_to 'Edit', edit_equipamento_path(@equipamento) %> |
+<%= link_to 'Back', equipamentos_path %>

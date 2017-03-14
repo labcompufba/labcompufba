@@ -13,11 +13,6 @@
   
 <table>
   
-  <tr colspan="3">
-   <td> <%= f.label :Codigo %></td>
-   <td class="col-md-9" ><%= f.number_field :cod_inst %></td>
-  </tr>
-  <tr><td><br></td></tr>
   
   <tr>
    <td> <%= f.label :Nome %></td>
@@ -25,9 +20,15 @@
   </tr>
   <tr><td><br></td></tr>
   
+    <tr>
+   <td> <%= f.label :Sigla %></td>
+   <td class="col-md-9" width="100" > <%= f.text_field :sigla %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
   <tr>
-   <td> <%= f.label :Endereço%></td>
-   <td class="col-md-9" > <%= f.text_area :endereco %></td>
+   <td> <%= f.label :Local%></td>
+   <td class="col-md-9" > <%= f.text_area :local %></td>
   </tr>
   <tr><td><br></td></tr>
   

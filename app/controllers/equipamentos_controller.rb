@@ -28,7 +28,7 @@ class EquipamentosController < ApplicationController
 
     respond_to do |format|
       if @equipamento.save
-        format.html { redirect_to @equipamento, notice: 'Item Criado com Sucesso!' }
+        format.html { redirect_to @equipamento, notice: 'Equipamento was successfully created.' }
         format.json { render :show, status: :created, location: @equipamento }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EquipamentosController < ApplicationController
   def update
     respond_to do |format|
       if @equipamento.update(equipamento_params)
-        format.html { redirect_to @equipamento, notice: 'O Item foi Editado com Sucesso' }
+        format.html { redirect_to @equipamento, notice: 'Equipamento was successfully updated.' }
         format.json { render :show, status: :ok, location: @equipamento }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EquipamentosController < ApplicationController
   def destroy
     @equipamento.destroy
     respond_to do |format|
-      format.html { redirect_to equipamentos_url, notice: 'Item Excluído Com Sucesso!' }
+      format.html { redirect_to equipamentos_url, notice: 'Equipamento was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class EquipamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipamento_params
-      params.require(:equipamento).permit(:codigo, :descricao)
+      params.require(:equipamento).permit(:descricao)
     end
 end

@@ -20,8 +20,8 @@ class LaboratoriosController < ApplicationController
 
   # GET /laboratorios/1/edit
   def edit
-     @laboratorio = Laboratorio.find(params[:id])
-     @institutos = Instituto.all
+    @laboratorio = Laboratorio.find(params[:id])
+    @institutos = Instituto.all
   end
 
   # POST /laboratorios
@@ -72,6 +72,6 @@ class LaboratoriosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def laboratorio_params
-      params.require(:laboratorio).permit(:cod_lab, :cod_inst, :nome, :local)
+      params.require(:laboratorio).permit(:nome, :sigla, :local, :instituto_id)
     end
 end

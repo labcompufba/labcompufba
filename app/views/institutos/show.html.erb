@@ -1,23 +1,19 @@
 <p id="notice"><%= notice %></p>
-<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
-  <thead>
-    <tr>
-<p>
-  <strong>Codigo</strong>
-  <%= @instituto.cod_inst %>
-</p>
-</tr>
- <tr>
+
 <p>
   <strong>Nome:</strong>
   <%= @instituto.nome %>
 </p>
- <tr>
-    <tr>
+
 <p>
-  <strong>Endereço:</strong>
-  <%= @instituto.endereco %>
+  <strong>Sigla:</strong>
+  <%= @instituto.sigla %>
 </p>
- <tr>
-   </table>
-<a class="btn btn-inverse btn-sm" <%= link_to 'Voltar', institutos_path %></a>
+
+<p>
+  <strong>Local:</strong>
+  <%= @instituto.local %>
+</p>
+
+<%= link_to 'Edit', edit_instituto_path(@instituto) %> |
+<%= link_to 'Back', institutos_path %>
