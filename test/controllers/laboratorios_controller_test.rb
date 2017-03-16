@@ -3,6 +3,8 @@ require 'test_helper'
 class LaboratoriosControllerTest < ActionDispatch::IntegrationTest
   setup do
     @laboratorio = laboratorios(:one)
+    @institutos = Instituto.all
+ 
   end
 
   test "should get index" do
