@@ -4,7 +4,6 @@
 #end
 Rails.application.routes.draw do
 
-  
   resources :application
   root 'application#index'
   resources :laboratorios

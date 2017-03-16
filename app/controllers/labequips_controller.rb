@@ -16,14 +16,14 @@ class LabequipsController < ApplicationController
   def new
     @labequip = Labequip.new
     @laboratorios = Laboratorio.all
-    @equipamentos = Equipamento.all
+    @equipamentos=Equipamento.all
   end
 
   # GET /labequips/1/edit
   def edit
-     @labequip = Labequip.find(params[:id])
-     @laboratorios = Laboratorio.all
-     @equipamentos = Equipamento.all
+    @labequip = Labequip.find(params[:id])
+    @laboratorios = Laboratorio.all
+    @equipamentos = Equipamento.all
   end
 
   # POST /labequips
@@ -74,6 +74,6 @@ class LabequipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def labequip_params
-      params.require(:labequip).permit(:cod_lab, :cod_equip, :quantidade)
+      params.require(:labequip).permit(:laboratorio_id, :equipamento_id, :quantidade, :numero_tombamento)
     end
 end

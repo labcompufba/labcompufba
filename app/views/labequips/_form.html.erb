@@ -14,13 +14,14 @@
 <table >
    <tr>
      <td><%= f.label :Laboratório %> </td>
-     <td class="col-md-9" > <%= collection_select(:labequip, :cod_lab, @laboratorios, :id, :nome, prompt: true) %></td>
+      <td><%= collection_select(:labequip, :laboratorio_id, @laboratorios, :id, :nome, prompt: "true") %></td>
    </tr>
    <tr><td><br></td></tr>
  
     <tr>
       <td><%= f.label :Equipamento %></td>
-       <td class="col-md-9" ><%= collection_select(:labequip, :cod_equip, @equipamentos, :id, :descricao, prompt: true) %></td>
+      
+        <td><%= collection_select(:labequip, :equipamento_id, @equipamentos, :id, :descricao, prompt: "true") %></td>
     </tr>
     <tr><td><br></td></tr>
 
@@ -29,6 +30,14 @@
       <td class="col-md-9" ><%= f.number_field :quantidade %></td>
     </tr>
     <tr><td><br></td></tr>
+    
+     <tr>
+      <td> <%= f.label :numero_tombamento %></td>
+      <td class="col-md-9" > <%= f.text_field :numero_tombamento %></td>
+     </tr>
+    <tr><td><br></td></tr>
+    
+  </div>
     
 </table>
   <div class="actions">

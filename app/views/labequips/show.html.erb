@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Cod lab:</strong>
-  <%= @labequip.cod_lab %>
+  <strong>Laboratorio:</strong>
+  <%= @labequip.laboratorio.sigla %>
 </p>
 
 <p>
-  <strong>Cod equip:</strong>
-  <%= @labequip.cod_equip %>
+  <strong>Equipamento:</strong>
+  <%= @labequip.equipamento.descricao %>
 </p>
 
 <p>
@@ -15,4 +15,10 @@
   <%= @labequip.quantidade %>
 </p>
 
+<p>
+  <strong>Numero tombamento:</strong>
+  <%= @labequip.numero_tombamento %>
+</p>
+
 <a class="btn btn-inverse btn-sm" <%= link_to 'Voltar', labequips_path %></a>
+</div>

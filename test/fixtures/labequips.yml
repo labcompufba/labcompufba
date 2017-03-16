@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  cod_lab: 1
-  cod_equip: 1
+  laboratorio_id: 1
+  equipamento_id: 1
   quantidade: 1
+  numero_tombamento: MyString
 
 two:
-  cod_lab: 1
-  cod_equip: 1
+  laboratorio_id: 1
+  equipamento_id: 1
   quantidade: 1
+  numero_tombamento: MyString

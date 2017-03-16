@@ -17,7 +17,7 @@ class LabequipsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create labequip" do
     assert_difference('Labequip.count') do
-      post labequips_url, params: { labequip: { cod_equip: @labequip.cod_equip, cod_lab: @labequip.cod_lab, quantidade: @labequip.quantidade } }
+      post labequips_url, params: { labequip: { equipamento_id: @labequip.equipamento_id, laboratorio_id: @labequip.laboratorio_id, numero_tombamento: @labequip.numero_tombamento, quantidade: @labequip.quantidade } }
     end
 
     assert_redirected_to labequip_url(Labequip.last)
@@ -34,7 +34,7 @@ class LabequipsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update labequip" do
-    patch labequip_url(@labequip), params: { labequip: { cod_equip: @labequip.cod_equip, cod_lab: @labequip.cod_lab, quantidade: @labequip.quantidade } }
+    patch labequip_url(@labequip), params: { labequip: { equipamento_id: @labequip.equipamento_id, laboratorio_id: @labequip.laboratorio_id, numero_tombamento: @labequip.numero_tombamento, quantidade: @labequip.quantidade } }
     assert_redirected_to labequip_url(@labequip)
   end
 
