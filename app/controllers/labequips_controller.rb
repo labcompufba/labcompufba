@@ -1,9 +1,9 @@
 class LabequipsController < ApplicationController
   before_action :set_labequip, only: [:show, :edit, :update, :destroy]
   
-  @labequip = Labequip.all 
-  @laboratorios = Laboratorio.all
-  @equipamentos = Equipamento.all
+  <%= @labequip %>
+  <%= @laboratorios %> 
+  <%= @equipamentos %>
 
   # GET /labequips
   # GET /labequips.json
