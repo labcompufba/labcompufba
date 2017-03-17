@@ -14,14 +14,14 @@
 <table >
    <tr>
      <td><%= f.label :Laboratório %> </td>
-      <td><%= collection_select(:labequip, :laboratorio_id, @laboratorios, :id, :nome, prompt: "true") %></td>
+      <td><%= collection_select(:labequip, :laboratorio_id, Laboratorio.all, :id, :nome, prompt: "true") %></td>
    </tr>
    <tr><td><br></td></tr>
  
     <tr>
       <td><%= f.label :Equipamento %></td>
       
-        <td><%= collection_select(:labequip, :equipamento_id, @equipamentos, :id, :descricao, prompt: "true") %></td>
+        <td><%= collection_select(:labequip, :equipamento_id, Equipamento.all, :id, :descricao, prompt: "true") %></td>
     </tr>
     <tr><td><br></td></tr>
 
