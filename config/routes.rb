@@ -4,6 +4,7 @@
 #end
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :application
   root 'application#index'
   resources :laboratorios
@@ -14,6 +15,10 @@ Rails.application.routes.draw do
   root 'institutos#index'
   resources :labequips
   root 'labequips#index'
+ 
+ resources :users
+ 
+  post 'logout' => 'user_sessions#destroy', :as => :logout
   
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador', to: 'pesquisador#index'
