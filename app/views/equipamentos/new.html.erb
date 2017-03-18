@@ -1,9 +1,7 @@
 <div id="main" class="container-fluid">
  <h4 class="page-header">Novo Item</h4>
  
- <%= @equipamentos = Equipamento.all %>
- 
- <%= render 'form', equipamento: @equipamentos %>
+ <%= render 'form', equipamento: @equipamento %>
 
 <a class="btn btn-inverse btn-sm"  <%= link_to 'Back', equipamentos_path %></a>
 </div>  

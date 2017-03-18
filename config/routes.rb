@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   root 'labequips#index'
  
  resources :users
- 
-  post 'logout' => 'user_sessions#destroy', :as => :logout
+
   
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador', to: 'pesquisador#index'

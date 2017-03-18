@@ -20,10 +20,9 @@
          <td><%= instituto.sigla %></td>
         <td><%= instituto.local %></td>
         <td class="actions">
-          <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', instituto %> </a>
-          <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_instituto_path(instituto) %></a>
-          <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', instituto, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
-          
+           <%= link_to 'Visulizar', instituto, class: 'btn btn-success btn-xs' %>
+           <%= link_to 'Editar', edit_instituto_path(instituto) , class: 'btn btn-warning btn-xs' %>
+           <%= link_to 'Deletar', instituto, method: :delete, data:{ confirm: 'você tem certeza?' }, class: 'btn btn-danger btn-xs' %>
         </td>
      </tr>
     <% end %>
