@@ -1,3 +1,3 @@
-class Equipamento < ActiveRecord::Base
+class Equipamento < ApplicationRecord
     has_many:labequips
 end
