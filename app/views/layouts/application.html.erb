@@ -25,7 +25,8 @@
     </button>
  
     <a class="navbar-brand" href="/">Home</a>
-       <% if user_signed_in? %>
+
+    <% if user_signed_in? %>
         <%= link_to "Sair", destroy_user_session_path, :method => :delete, :class => 'navbar-brand navbar-right' %>
         <%= link_to 'Perfil', edit_user_registration_path, :class => 'navbar-brand navbar-right' %> 
     <% else %>

@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 #Bibliotecas de autenticacao
 gem 'devise'
 gem 'devise-i18n'
+gem 'cancancan'
+ 
+
+#Biblioteca de internacionalização 
+gem 'rails-i18n'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -49,6 +54,14 @@ group :development, :test do
 end
 group :production do
   gem 'pg'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

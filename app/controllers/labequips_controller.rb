@@ -1,9 +1,5 @@
 class LabequipsController < ApplicationController
   before_action :set_labequip, only: [:show, :edit, :update, :destroy]
-  
-  @labequip 
-  @laboratorios  
-  @equipamentos 
 
   # GET /labequips
   # GET /labequips.json

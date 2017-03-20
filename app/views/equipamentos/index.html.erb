@@ -19,8 +19,12 @@
         <td><%= equipamento.descricao %></td>
           <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', equipamento %> </a>
-          <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_equipamento_path(equipamento) %></a>
-          <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', equipamento,  method: :delete, data: {confirm: 'Você tem certeza?'} %></a>
+          <% if can? :create, Equipamento %>
+            <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_equipamento_path(equipamento) %></a>
+          <% end %>
+          <% if can? :create, Equipamento %>
+            <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', equipamento,  method: :delete, data: {confirm: 'Você tem certeza?'} %></a>
+          <%end%>
           </td> 
       </tr>
     <% end %>
@@ -29,5 +33,6 @@
 </div>
 </div>
 <br>
-
+ <% if can? :create, Equipamento %>
 <a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>
+  <%end%>
