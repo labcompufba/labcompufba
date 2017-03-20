@@ -16,9 +16,6 @@ Rails.application.routes.draw do
   resources :labequips
   root 'labequips#index'
  
- resources :users
-
-  
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador', to: 'pesquisador#index'
   get '/pesquisador/show', to: 'pesquisador#show'
