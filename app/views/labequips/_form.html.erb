@@ -1,8 +1,5 @@
 <%= form_for(labequip) do |f| %>
 
-  <%= @laboratorios = Laboratorio.all %>
-  <%= @equipamentos = Equipamento.all %>
-
   <% if labequip.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(labequip.errors.count, "error") %> prohibited this labequip from being saved:</h2>

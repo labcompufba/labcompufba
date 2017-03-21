@@ -1,4 +1,4 @@
-class Laboratorio < ActiveRecord::Base
+class Laboratorio < ApplicationRecord
     belongs_to :instituto
-    has_many:labequips
+    has_many :labequips
 end

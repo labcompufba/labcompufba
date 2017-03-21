@@ -1,3 +1,3 @@
 class Equipamento < ApplicationRecord
-    has_many:labequips
+    has_many :labequips
 end

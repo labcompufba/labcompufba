@@ -1,4 +1,4 @@
-class Labequip  < ActiveRecord::Base
+class Labequip  < ApplicationRecord
     belongs_to :equipamento
     belongs_to :laboratorio
 end
