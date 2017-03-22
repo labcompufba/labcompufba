@@ -3,5 +3,5 @@
 
 <%= render 'form', labequip: @labequip %>
 
-<a class="btn btn-inverse btn-sm" <%= link_to 'Voltar', labequips_path %></a>
+<a class="btn btn-inverse btn-sm" <%= link_to 'Voltar', {:controller => "labequips", :action => "index", :laboratorio_id => @labequip.laboratorio.id} %></a>
 </div>
