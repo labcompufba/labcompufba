@@ -4,7 +4,11 @@ class InstitutosController < ApplicationController
   # GET /institutos
   # GET /institutos.json
   def index
-    @institutos = Instituto.all
+    if params[:search]
+        @institutos = Instituto.where("nome like ?", "%#{params[:search]}%");
+    else
+        @institutos = Instituto.order(:nome);
+    end
   end
 
   # GET /institutos/1
