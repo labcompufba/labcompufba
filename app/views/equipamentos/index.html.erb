@@ -1,3 +1,8 @@
+<%= form_tag(equipamentos_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Digite o equipamento" %>
+<%= submit_tag "Buscar" %>
+<% end %>
+<br> </br>
 
 <p id="notice"><%= notice %></p>
 
