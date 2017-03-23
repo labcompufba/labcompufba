@@ -33,6 +33,6 @@
 
 <br>
 
-<a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', new_labequip_path %></a>
+<a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', {:controller => "labequips", :action => "new", :laboratorio_id => params[:laboratorio_id]} %></a>
 <a class="btn btn-sm" <%= link_to 'Voltar', laboratorios_url %></a>
   

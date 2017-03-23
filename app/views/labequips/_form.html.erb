@@ -14,7 +14,7 @@
 <table >
    <tr>
      <td><%= f.label :Laboratório %> </td>
-      <td><%= collection_select(:labequip, :laboratorio_id, @laboratorios, :id, :nome, prompt: "true") %></td>
+      <td><%= collection_select(:labequip, :laboratorio_id, @laboratorios, :id, :nome, {:selected => params[:laboratorio_id]}) %></td>
    </tr>
    <tr><td><br></td></tr>
  
