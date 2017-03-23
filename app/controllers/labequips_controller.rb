@@ -61,7 +61,7 @@ class LabequipsController < ApplicationController
   def destroy
     @labequip.destroy
     respond_to do |format|
-      format.html { redirect_to labequips_url, notice: 'Labequip was successfully destroyed.' }
+      format.html { redirect_to ({:action => "index", :laboratorio_id => @labequip.laboratorio.id}), notice: 'Labequip was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
