@@ -23,10 +23,10 @@
         <td><%= labequip.numero_tombamento %></td>
         <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', labequip %> </a>
-          <% if can? :pesq, LabEquip %>
-           a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_labequip_path(labequip) %></a>
+
+           <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_labequip_path(labequip) %></a>
            <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', labequip, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
-          <%end%>   
+
         </td>
       </tr>
     <% end %>
@@ -34,8 +34,8 @@
 </table>
 
 <br>
-<% if can? :pesq, LabEquip %>
+
 
  <a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', {:controller => "labequips", :action => "new", :laboratorio_id => params[:laboratorio_id]} %></a>
  <a class="btn btn-default btn-sm" <%= link_to 'Voltar', laboratorios_url %></a>
-<%end%>
+

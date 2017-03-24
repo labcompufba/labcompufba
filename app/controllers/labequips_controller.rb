@@ -4,7 +4,7 @@ class LabequipsController < ApplicationController
   # GET /labequips
   # GET /labequips.json
   def index
-    @labequips = Labequip.all
+    @labequips = Labequip.where(laboratorio_id: params[:laboratorio_id])
   end
 
   # GET /labequips/1
