@@ -18,11 +18,19 @@ class InstitutosController < ApplicationController
 
   # GET /institutos/new
   def new
-    @instituto = Instituto.new
+    if can? :pesq, Instituto
+        @instituto = Instituto.new
+    else
+        redirect_to institutos_path
+    end
+      
   end
 
   # GET /institutos/1/edit
   def edit
+    if !(can? :pesq, Instituto)
+      redirect_to institutos_path
+    end  
   end
 
   # POST /institutos

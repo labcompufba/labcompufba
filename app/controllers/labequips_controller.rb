@@ -14,16 +14,24 @@ class LabequipsController < ApplicationController
 
   # GET /labequips/new
   def new
-    @labequip = Labequip.new
-    @laboratorios = Laboratorio.all
-    @equipamentos=Equipamento.all
+    if can? :pesq, Labequip
+      @labequip = Labequip.new
+      @laboratorios = Laboratorio.all
+      @equipamentos=Equipamento.all
+    else
+      redirect_to laboratorios_url
+    end
   end
 
   # GET /labequips/1/edit
   def edit
-    @labequip = Labequip.find(params[:id])
-    @laboratorios = Laboratorio.all
-    @equipamentos = Equipamento.all
+    if can? :pesq, Labequip
+      @labequip = Labequip.find(params[:id])
+      @laboratorios = Laboratorio.all
+      @equipamentos = Equipamento.all
+    else
+      redirect_to laboratorios_url
+    end
   end
 
   # POST /labequips

@@ -18,11 +18,18 @@ class EquipamentosController < ApplicationController
 
   # GET /equipamentos/new
   def new
-    @equipamento = Equipamento.new
+    if can? :pesq, Equipamento
+      @equipamento = Equipamento.new
+    else
+      redirect_to equipamentos_path
+    end
   end
 
   # GET /equipamentos/1/edit
   def edit
+    if !(can? :pesq, Equipamento)
+      redirect_to equipamentos_path
+    end
   end
 
   # POST /equipamentos

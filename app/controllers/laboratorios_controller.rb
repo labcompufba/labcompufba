@@ -14,14 +14,22 @@ class LaboratoriosController < ApplicationController
 
   # GET /laboratorios/new
   def new
-    @laboratorio = Laboratorio.new
-    @institutos = Instituto.all
+    if can? :pesq, Laboratorio
+      @laboratorio = Laboratorio.new
+      @institutos = Instituto.all
+    else
+      redirect_to laboratorios_url
+    end
   end
 
   # GET /laboratorios/1/edit
   def edit
-    @laboratorio = Laboratorio.find(params[:id])
-    @institutos = Instituto.all
+    if can? :pesq, Laboratorio
+      @laboratorio = Laboratorio.find(params[:id])
+      @institutos = Instituto.all
+    else
+      redirect_to laboratorios_url
+    end
   end
 
   # POST /laboratorios
