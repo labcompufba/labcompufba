@@ -1,13 +1,11 @@
 <%= form_tag(equipamentos_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Digite o equipamento" %>
-<%= submit_tag "Buscar" %>
+<%=submit_tag "Buscar"%>
 <% end %>
-<br> </br>
+<br> 
 
 <p id="notice"><%= notice %></p>
-
 <div id="list" class="row">
-
 <div class="table-responsive col-md-12">
 <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
   <thead>
@@ -23,11 +21,9 @@
       <tr>
         <td><%= equipamento.descricao %></td>
           <td class="actions">
-          <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', equipamento %> </a>
-          <% if can? :create, Equipamento %>
+          <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', equipamento %> </a>
+          <% if can? :pesq, Equipamento %>
             <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_equipamento_path(equipamento) %></a>
-          <% end %>
-          <% if can? :create, Equipamento %>
             <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', equipamento,  method: :delete, data: {confirm: 'Você tem certeza?'} %></a>
           <%end%>
           </td> 
@@ -38,6 +34,6 @@
 </div>
 </div>
 <br>
- <% if can? :create, Equipamento %>
-<a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>
+ <% if can? :pesq, Equipamento %>
+   <a class=" btn btn-default btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>
   <%end%>

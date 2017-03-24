@@ -2,7 +2,7 @@
 <%= text_field_tag :search, params[:search], placeholder: "Digite o instituto" %>
 <%= submit_tag "Buscar" %>
 <% end %>
-<br> </br>
+<br> 
 
 <p id="notice"><%= notice %></p>
 <div id="list" class="row">
@@ -25,9 +25,11 @@
          <td><%= instituto.sigla %></td>
         <td><%= instituto.local %></td>
         <td class="actions">
-           <%= link_to 'Visulizar', instituto, class: 'btn btn-success btn-xs' %>
-           <%= link_to 'Editar', edit_instituto_path(instituto) , class: 'btn btn-warning btn-xs' %>
-           <%= link_to 'Deletar', instituto, method: :delete, data:{ confirm: 'você tem certeza?' }, class: 'btn btn-danger btn-xs' %>
+           <%= link_to 'Visualizar', instituto, class: 'btn btn-success btn-xs' %>
+           <% if can? :pesq, Instituto %>
+            <%= link_to 'Editar', edit_instituto_path(instituto) , class: 'btn btn-warning btn-xs' %>
+            <%= link_to 'Deletar', instituto, method: :delete, data:{ confirm: 'você tem certeza?' }, class: 'btn btn-danger btn-xs' %>
+           <%end%>
         </td>
      </tr>
     <% end %>
@@ -36,5 +38,6 @@
 </div>
 </div>
 <br>
-
+<% if can? :pesq, Instituto %>
 <a class="btn btn-primary btn-sm" <%= link_to 'Novo Instituto', new_instituto_path %></a>
+<%end%>

@@ -3,12 +3,26 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    if user.admin?
+    
+    if user.admin? 
       can :manage, :all
+    end
+    
+    if user.pesq?  or user.admin? 
+     alias_action  :create, :read, :update, :destroy, :to => :pesq 
+       can :pesq, Equipamento
+       can :pesq, Instituto
+       can :pesq, Laboratorio
+      
     else
-    #  can :read, :all
-      can [:read, :update, :destroy], Equipamento
+     alias_action  :read, :to => :usuario
+     
+        can :usuario, :all
       #can :manage, User
     end
   end
+  
+  
+  
+  
 end

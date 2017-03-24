@@ -15,7 +15,12 @@
       <%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %>
     </p>
   <% end %>
-
+  
+  <% if can? :manage, User %>
+    <div><%= f.check_box :admin, {}, true %> <%= f.label :admin, "Administrador" %> </div>
+    <div><%= f.check_box :pesq, {}, true %> <%= f.label :pesq, "Pesquisador" %> </div>
+  <%end%>
+  
   <div class="field">
     <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>

@@ -23,19 +23,22 @@
         <td><%= laboratorio.local %></td>
         <td><%= laboratorio.sigla %></td>
          <td class="actions">
-          <a class="btn btn-success btn-xs"<%= link_to 'Visulizar', laboratorio %> </a>
+          <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', laboratorio %> </a>
+          <% if can? :pesq, Laboratorio %>
           <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></a>
           <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', laboratorio, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
+          <%end%>
           <a class="btn btn-primary btn-xs"<%= link_to 'Equipamentos', {:controller => "labequips", :action => "index", :laboratorio_id => laboratorio.id}%> </a>
+         
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br>  
 
-<a class="btn btn-primary btn-sm" <%= link_to 'Novo Laboratório', new_laboratorio_path %></a>
-  
-
+<% if can? :pesq, Laboratorio %>
+  <a class="btn btn-primary btn-sm" <%= link_to 'Novo Laboratório', new_laboratorio_path %></a>
+<%end%>
 
