@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div id="list" class="row">
+<div class="table-responsive col-md-12">
+<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+  <thead>
+    <tr>
+      <th>Nome </th>
+      <th>E-mail </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.nome %> </td>
+        <td><%= user.email %> </td>
+         <td class="actions">
+          <a class="btn btn-warning btn-xs"<%= link_to "Editar Usuário", edit_user_path(user) %>
+          <a class="btn btn-danger btn-xs" <%= link_to "Deletar Usuário", user, :confirm => "Você tem ceretza?", :method => :delete %></a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>

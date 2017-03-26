@@ -1,0 +1,26 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<table>
+<p><%= f.label :nome %><br />
+<%= f.text_field :nome %></p>
+<p><%= f.label :matricula %><br />
+<%= f.text_field :matricula %></p>
+<p><%= f.label :email %><br />
+<%= f.text_field :email %></p>
+
+ <div><%= f.check_box :admin, {}, true %> <%= f.label :admin, "Administrador" %> </div>
+    <div><%= f.check_box :pesq, {}, true %> <%= f.label :pesq, "Pesquisador" %> </div>
+</table>
+<p><%= f.submit "Submit" %></p>
+<% end %>

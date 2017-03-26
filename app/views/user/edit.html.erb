@@ -1,0 +1,6 @@
+<div id="main" class="container-fluid">
+<h4 class="page-header">Editar usuarios</h4>
+<%= form_for @user, :url => user_path do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+</div>

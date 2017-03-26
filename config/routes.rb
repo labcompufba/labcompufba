@@ -1,7 +1,4 @@
-#  resources :posts
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-#  root to: redirect('/posts')
-#end
+
 Rails.application.routes.draw do
 
   devise_for :users
@@ -15,9 +12,13 @@ Rails.application.routes.draw do
   root 'institutos#index'
   resources :labequips
   root 'labequips#index'
- 
-  get '/pesquisador', to: 'pesquisador#index'
-  get '/pesquisador', to: 'pesquisador#index'
-  get '/pesquisador/show', to: 'pesquisador#show'
-  get '/pesquisador/edit', to: 'pesquisador#edit'
+ resources :user
+  root 'user#index'
+  
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+      get '/user' => 'user#index'
+  end
+
 end

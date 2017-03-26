@@ -9,14 +9,13 @@ class Ability
     end
     
     if user.pesq?  or user.admin? 
-     alias_action  :create, :read, :update, :destroy, :to => :pesq 
+       alias_action  :create, :read, :update, :destroy, :to => :pesq 
        can :pesq, Equipamento
        can :pesq, Instituto
        can :pesq, Laboratorio
-      
+       can :pesq, Labequip
     else
-     alias_action  :read, :to => :usuario
-     
+        alias_action  :read, :to => :usuario
         can :usuario, :all
       #can :manage, User
     end
