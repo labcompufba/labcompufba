@@ -16,8 +16,8 @@
         <td><%= user.nome %> </td>
         <td><%= user.email %> </td>
          <td class="actions">
-          <a class="btn btn-warning btn-xs"<%= link_to "Editar Usuário", edit_user_path(user) %>
-          <a class="btn btn-danger btn-xs" <%= link_to "Deletar Usuário", user, :confirm => "Você tem ceretza?", :method => :delete %></a>
+          <a class="btn btn-warning btn-xs"<%= link_to "Editar", edit_user_path(user) %>
+          <a class="btn btn-danger btn-xs" <%= link_to "Deletar", user, :confirm => "Você tem ceretza?", :method => :delete %></a>
         </td>
       </tr>
     <% end %>
