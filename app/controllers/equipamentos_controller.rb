@@ -7,7 +7,7 @@ class EquipamentosController < ApplicationController
     if params[:search]
         @equipamentos = Equipamento.where("descricao like ?", "%#{params[:search]}%");
     else
-        @equipamentos = Equipamento.order(:descricao);
+        @equipamentos = Equipamento.order(:descricao).page(params['page']).per(4);
     end
   end
 

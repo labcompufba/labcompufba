@@ -8,9 +8,10 @@
     <tr>
       <th>Laboratório</th>
       <th>Equipamento</th>
-      <th>Quantidade</th>
+      <th>Qtd.</th>
       <th>Num. Tombamento</th>
-      <th colspan="3"></th>
+      <th>Manutenção</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -21,6 +22,7 @@
         <td><%= labequip.equipamento.descricao %></td>
         <td><%= labequip.quantidade %></td>
         <td><%= labequip.numero_tombamento %></td>
+        <td><%= labequip.manutencao %></td>
         <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', labequip %> </a>
            <% if can? :pesq, Instituto %>

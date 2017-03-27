@@ -42,7 +42,7 @@ class UserController < ApplicationController
       redirect_to root_path
     end
   end
-  
+ 
  private
 
     # Use callbacks to share common setup or constraints between actions.
@@ -54,6 +54,7 @@ class UserController < ApplicationController
     def user_params
      params.require(:user).permit(:email,:nome,:pesq,:admin,:matricula)
     end
+     
 
 end
 

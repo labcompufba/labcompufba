@@ -20,5 +20,9 @@
   <%= @labequip.numero_tombamento %>
 </p>
 
+<p>
+  <strong>Manutencao:</strong>
+  <%= @labequip.manutencao %>
+</p>
 <a class="btn btn-default btn-sm" <%= link_to 'Voltar', {:controller => "labequips", :action => "index", :laboratorio_id => @labequip.laboratorio.id} %></a>
 </div>

@@ -13,7 +13,6 @@
  </div>
 
 <body>
-
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 <div class="navbar-collapse collapse"align="center">
  <h3> Laboratórios Compartilhados UFBA</h3>
@@ -25,7 +24,6 @@
     </button>
  
     <a class="navbar-brand" href="/">Home</a>
-
     <% if user_signed_in? %>
         <%= link_to "Sair", destroy_user_session_path, :method => :delete, :class => 'navbar-brand navbar-right' %>
         <%= link_to 'Perfil', edit_user_registration_path, :class => 'navbar-brand navbar-right' %> 
@@ -43,6 +41,7 @@
         <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
         <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
         <li><a class="glyphicon glyphicon-book" href="/laboratorios"> <span class = "p"> Laboratórios</span></a></li>
+        <li><a class="glyphicon glyphicon-book" href="/testes"> <span class = "p"> Teste</span></a></li>
        <!-- <li><a class="glyphicon glyphicon-calendar" href="/"> <span class = "p"> Manuteção</span></a></li>-->
       </ul>
     </div>
@@ -50,8 +49,35 @@
 	<div class="container"> 
 	   <%=yield%> 
 	</div>
-    <footer class="container-fluid text-center"> 
-	</footer>
+   <footer>
+        <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <div class="navbar-collapse collapse" id="footer-body">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a class = 'navbar-right' href=""> Github</a></li>
+                      
+  </a>
+                    </ul>
+                </div>
+              	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-body">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <ul class="footer-bar-btns visible-xs">
+                        <li><a href="#" class="btn" title="History"><i class="fa fa-2x fa-clock-o blue-text"></i></a></li>
+                        <li><a href="#" class="btn" title="Favourites"><i class="fa fa-2x fa-star yellow-text"></i></a></li>
+                        <li><a href="#" class="btn" title="Subscriptions"><i class="fa fa-2x fa-rss-square orange-text"></i></a></li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+
+</footer>
   </div>
 </div>
 </body>

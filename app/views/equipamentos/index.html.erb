@@ -3,14 +3,12 @@
 <%=submit_tag "Buscar"%>
 <% end %>
 <br> 
-
 <p id="notice"><%= notice %></p>
 <div id="list" class="row">
 <div class="table-responsive col-md-12">
 <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
   <thead>
     <tr>
-      <th>Código </th>
       <th>Descrição </th>
       <th colspan="3"></th>
     </tr>
@@ -31,9 +29,17 @@
     <% end %>
   </tbody>
 </table>
+<div class="text-center">
+  <div class="pagination">
+  <table>
+    <tr>
+      <td ><%= paginate @equipamentos %></td>
+  <tr>
+</table>
+</DIV>
 </div>
 </div>
-<br>
+</div>
  <% if can? :pesq, Equipamento %>
    <a class=" btn btn-default btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>
-  <%end%>
+<%end%>

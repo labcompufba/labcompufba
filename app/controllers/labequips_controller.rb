@@ -82,6 +82,6 @@ class LabequipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def labequip_params
-      params.require(:labequip).permit(:laboratorio_id, :equipamento_id, :quantidade, :numero_tombamento)
+      params.require(:labequip).permit(:laboratorio_id, :equipamento_id, :quantidade, :numero_tombamento,:manutencao)
     end
 end

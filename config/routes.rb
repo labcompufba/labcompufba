@@ -1,6 +1,7 @@
 
 Rails.application.routes.draw do
 
+
   devise_for :users
   resources :application
   root 'application#index'
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   root 'institutos#index'
   resources :labequips
   root 'labequips#index'
- resources :user
+  resources :user
   root 'user#index'
   
   devise_scope :user do

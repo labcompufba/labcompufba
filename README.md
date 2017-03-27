@@ -29,5 +29,7 @@
  
 ## Dicas
  - rails server -b $IP -p $PORT
- - rake db:migrate
  - bundle install
+ - rake db:migrate
+ - rake db:seed
+
