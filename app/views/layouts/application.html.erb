@@ -6,6 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Laboratórios Compartilhados</title>
    <%= csrf_meta_tags %>
+   
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -41,7 +42,7 @@
         <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
         <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
         <li><a class="glyphicon glyphicon-book" href="/laboratorios"> <span class = "p"> Laboratórios</span></a></li>
-       <!-- <li><a class="glyphicon glyphicon-calendar" href="/"> <span class = "p"> Manuteção</span></a></li>-->
+        <!--<li><a class="glyphicon glyphicon-calendar" href="/"> <span class = "p"> Manutenção</span></a></li>-->
       </ul>
     </div>
      </nav>
@@ -55,8 +56,10 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#">Sobre</a></li>
                         <li><a href="#">Contato</a></li>
-                        <li><a class = 'navbar-right' href="https://github.com/labcompufba/labcompufba"> Github</a></li>
-                      
+                        <li><a class = "nav navbar-nav navbar-right" href="https://github.com/labcompufba/labcompufba"> Github</a></li>
+                        <% if user_signed_in? %>
+                          <li><a href="#"> Usuário Logado: <%= current_user.nome %></a></li> 
+                         <%end%> 
   </a>
                     </ul>
                 </div>

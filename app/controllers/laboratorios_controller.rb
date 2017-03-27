@@ -3,8 +3,12 @@ class LaboratoriosController < ApplicationController
 
   # GET /laboratorios
   # GET /laboratorios.json
-  def index
-    @laboratorios = Laboratorio.all
+    def index
+    if params[:search]
+         @laboratorios = Laboratorio.where("nome like ?", "%#{params[:search]}%").page(params['page']).per(4);
+    else
+         @laboratorios = Laboratorio.order(:instituto_id,:nome).page(params['page']).per(4);
+    end
   end
 
   # GET /laboratorios/1

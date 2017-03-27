@@ -36,10 +36,10 @@
       <td ><%= paginate @equipamentos %></td>
   <tr>
 </table>
-</DIV>
+</div>
 </div>
 </div>
 </div>
  <% if can? :pesq, Equipamento %>
-   <a class=" btn btn-default btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>
+   <a class=" btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>
 <%end%>

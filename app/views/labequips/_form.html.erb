@@ -41,9 +41,14 @@
     <tr>
       <td> <%= f.label :manutencao %>
      <td><%= f.check_box :manutencao %></td>
-   </tr>
+    </tr>
     <tr><td><br></td></tr>
     
+    <tr>
+    <td> <%= f.hidden_field :user_manutencao, value:current_user.nome %> </td>
+    </tr>
+    <tr><td><br></td></tr>
+  
   </div>
     
 </table>
