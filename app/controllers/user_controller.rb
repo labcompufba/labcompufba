@@ -12,7 +12,7 @@ class UserController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Successfully created User." 
+      flash[:notice] = "O usuário foi criado com sucesso." 
       redirect_to root_path
     else
       render :action => 'new'
@@ -27,7 +27,7 @@ class UserController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-     flash[:notice] = "Successfully updated User."
+     flash[:notice] = "O usuário foi atualizado com sucesso."
       redirect_to root_path
     else
       render :action => 'edit'
@@ -38,7 +38,7 @@ class UserController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      flash[:notice] = "Successfully deleted User."
+      flash[:notice] = "O usuário foi deletado com sucesso."
       redirect_to root_path
     end
   end
