@@ -18,24 +18,27 @@
   </thead>
 
   <tbody>
-    
-    <% @laboratorios.each do |laboratorio| %>
-      <tr>
-        <td><%= laboratorio.instituto.sigla%></td>
-        <td><%= laboratorio.nome %></td>
-        <td><%= laboratorio.local %></td>
-        <td><%= laboratorio.sigla %></td>
-         <td class="actions">
-          <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', laboratorio %> </a>
-          <% if can? :pesq, Laboratorio %>
-          <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></a>
-          <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', laboratorio, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
-          <%end%>
-          <a class="btn btn-primary btn-xs"<%= link_to 'Equipamentos', {:controller => "labequips", :action => "index", :laboratorio_id => laboratorio.id}%> </a>
-         
-        </td>
-      </tr>
-    <% end %>
+    <% if @laboratorios.present? %>
+      <% @laboratorios.each do |laboratorio| %>
+        <tr>
+          <td><%= laboratorio.instituto.sigla%></td>
+          <td><%= laboratorio.nome %></td>
+          <td><%= laboratorio.local %></td>
+          <td><%= laboratorio.sigla %></td>
+           <td class="actions">
+            <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', laboratorio %> </a>
+            <% if can? :pesq, Laboratorio %>
+            <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></a>
+            <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', laboratorio, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
+            <%end%>
+            <a class="btn btn-primary btn-xs"<%= link_to 'Equipamentos', {:controller => "labequips", :action => "index", :laboratorio_id => laboratorio.id}%> </a>
+          </td>
+        </tr>
+      <% end %>
+      
+      <% else %>
+        <p> Não existe nenhum laboratório cadastrado correspondente à essa descrição. </p>
+      <% end %>
   </tbody>
 </table>
 

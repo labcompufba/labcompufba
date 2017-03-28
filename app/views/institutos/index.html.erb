@@ -19,20 +19,25 @@
   </thead>
 
   <tbody>
-    <% @institutos.each do |instituto| %>
-      <tr>
-        <td><%= instituto.nome %></td>
-         <td><%= instituto.sigla %></td>
-        <td><%= instituto.local %></td>
-        <td class="actions">
-           <%= link_to 'Visualizar', instituto, class: 'btn btn-success btn-xs' %>
-           <% if can? :pesq, Instituto %>
-            <%= link_to 'Editar', edit_instituto_path(instituto) , class: 'btn btn-warning btn-xs' %>
-            <%= link_to 'Deletar', instituto, method: :delete, data:{ confirm: 'você tem certeza?' }, class: 'btn btn-danger btn-xs' %>
-           <%end%>
-        </td>
-     </tr>
-    <% end %>
+    <% if @institutos.present? %>
+      <% @institutos.each do |instituto| %>
+        <tr>
+          <td><%= instituto.nome %></td>
+           <td><%= instituto.sigla %></td>
+          <td><%= instituto.local %></td>
+          <td class="actions">
+             <%= link_to 'Visualizar', instituto, class: 'btn btn-success btn-xs' %>
+             <% if can? :pesq, Instituto %>
+              <%= link_to 'Editar', edit_instituto_path(instituto) , class: 'btn btn-warning btn-xs' %>
+              <%= link_to 'Deletar', instituto, method: :delete, data:{ confirm: 'você tem certeza?' }, class: 'btn btn-danger btn-xs' %>
+             <%end%>
+          </td>
+       </tr>
+      <% end %>
+      
+      <% else %>
+        <p> Não existe nenhum instituto cadastrado correspondente à essa descrição. </p>
+      <% end %>
   </tbody>
 </table>
 <div class="text-center">

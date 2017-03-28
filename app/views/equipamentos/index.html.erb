@@ -15,17 +15,21 @@
   </thead>
 
   <tbody>
-    <% @equipamentos.each do |equipamento| %>
-      <tr>
-        <td><%= equipamento.descricao %></td>
-          <td class="actions">
-          <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', equipamento %> </a>
-          <% if can? :pesq, Equipamento %>
-            <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_equipamento_path(equipamento) %></a>
-            <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', equipamento,  method: :delete, data: {confirm: 'Você tem certeza?'} %></a>
-          <%end%>
-          </td> 
-      </tr>
+    <% if @equipamentos.present? %>
+      <% @equipamentos.each do |equipamento| %>
+        <tr>
+          <td><%= equipamento.descricao %></td>
+            <td class="actions">
+            <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', equipamento %> </a>
+            <% if can? :pesq, Equipamento %>
+              <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_equipamento_path(equipamento) %></a>
+              <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', equipamento,  method: :delete, data: {confirm: 'Você tem certeza?'} %></a>
+            <%end%>
+            </td> 
+        </tr>
+      <% end %>
+    <% else %>
+       <p> Não existe nenhum equipamento cadastrado correspondente à essa descrição. </p>
     <% end %>
   </tbody>
 </table>
