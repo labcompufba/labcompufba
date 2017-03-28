@@ -11,6 +11,7 @@
    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> 
  </div>
 
 <body>
@@ -24,15 +25,17 @@
 		<span class="icon-bar"></span> 
     </button>
  
-    <a class="navbar-brand" href="/">Home</a>
+    <a class="navbar-brand" href="/" title="Home"><i class="fa fa-home fa-lg"></i></a>
     <% if user_signed_in? %>
-        <%= link_to "Sair", destroy_user_session_path, :method => :delete, :class => 'navbar-brand navbar-right' %>
-        <%= link_to 'Perfil', edit_user_registration_path, :class => 'navbar-brand navbar-right' %> 
+        <!--<%= link_to "Sair", destroy_user_session_path, :method => :delete, :class => 'navbar-brand navbar-right' %>-->
+        <!--<%= link_to 'Perfil', edit_user_registration_path, :class => 'navbar-brand navbar-right' %> -->
+       <a class ="navbar-brand navbar-right" href="/logout" title="Sair"><i class="fa fa-sign-out fa-lg"></i></a>
+       <a class ="navbar-brand navbar-right" href="/perfil" title="Perfil"><i class="fa fa-user fa-lg"></i></a>
         <% if can? :manage,@users %>
-          <a class="navbar-brand navbar-right" href="/user">Usuários</a>
+            <a class ="navbar-brand navbar-right" href="/user" title="Usuários"><i class="fa fa-users fa-lg"></i></a>
         <%end%>  
     <% else %>
-         <%=link_to "Login", new_user_session_path, :class => 'navbar-brand navbar-right'  %>
+        <a class ="navbar-brand navbar-right" href="/login" title="Login"><i class="fa fa-sign-in fa-1x"> Login</i></a>
     <% end %>
  
     <div class= "dropdown">
@@ -42,7 +45,7 @@
         <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
         <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
         <li><a class="glyphicon glyphicon-book" href="/laboratorios"> <span class = "p"> Laboratórios</span></a></li>
-        <!--<li><a class="glyphicon glyphicon-calendar" href="/"> <span class = "p"> Manutenção</span></a></li>-->
+        <!--<li><a class="glyphicon glyphicon-user" href="/"> <span class = "p"> Manutenção</span></a></li>-->
       </ul>
     </div>
      </nav>
@@ -56,11 +59,10 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#">Sobre</a></li>
                         <li><a href="#">Contato</a></li>
-                        <li><a class = "nav navbar-nav navbar-right" href="https://github.com/labcompufba/labcompufba"> Github</a></li>
+                        <li><a class ="nav navbar-nav pull-right" href="https://github.com/labcompufba/labcompufba" title="github" target="_blank"><i class="fa fa-github fa-2x"></i></a></li> 
                         <% if user_signed_in? %>
-                          <li><a href="#"> Usuário Logado: <%= current_user.nome %></a></li> 
+                             <li><a ><i class="fa fa-user fa"> Usuário Logado:<%= current_user.nome %></i></a></li> 
                          <%end%> 
-  </a>
                     </ul>
                 </div>
               	<div class="navbar-header">
@@ -78,7 +80,6 @@
     
             </div>
         </div>
-
 </footer>
   </div>
 </div>

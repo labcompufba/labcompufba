@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
-      get '/user' => 'user#index'
+    get '/perfil' => 'devise/registrations#edit'
+    get '/user' => 'user#index'
   end
 
 end

@@ -84,10 +84,17 @@ ul.pagination li a {
     border-bottom-right-radius: 5px;
 }
 
-pagination li a.active {
+.pagination li a.active {
     background-color: #4CAF50;
     color: white;
     border: 1px solid #4CAF50;
 }
 
 ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+.navbar .nav.pull-right {
+     float: right;
+    margin-right: 720px; /*set margin this way in your custom styesheet*/
+  }
+  
+.language {right:50px;position:absolute;}
