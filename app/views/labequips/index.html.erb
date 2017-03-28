@@ -22,7 +22,7 @@
         <td><%= labequip.equipamento.descricao %></td>
         <td><%= labequip.quantidade %></td>
         <td><%= labequip.numero_tombamento %></td>
-        <td><%= labequip.manutencao %></td>
+        <td><input id="manutencao" name="manutencao" type="checkbox" disabled="disabled" <% if labequip.manutencao %> checked <%end%> /></td>
         <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', labequip %> </a>
            <% if can? :pesq, Instituto %>
