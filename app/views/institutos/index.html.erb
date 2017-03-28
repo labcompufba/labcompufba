@@ -4,22 +4,22 @@
 <% end %>
 <br> 
 
-<p id="notice"><%= notice %></p>
-<div id="list" class="row">
-  
-<div class="table-responsive col-md-12">
-<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Sigla</th>
-      <th>Local</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% if @institutos.present? %>
+    <p id="notice"><%= notice %></p>
+    <div id="list" class="row">
+      
+    <div class="table-responsive col-md-12">
+    <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sigla</th>
+          <th>Local</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        
       <% @institutos.each do |instituto| %>
         <tr>
           <td><%= instituto.nome %></td>
@@ -35,24 +35,28 @@
        </tr>
       <% end %>
       
+      </tbody>
+      </table>
+      <div class="text-center">
+        <div class="pagination">
+        <table>
+          <tr>
+            <td ><%= paginate @institutos %></td>
+        <tr>
+      </table>
+      </div>
+      </div>
+      
+      </div>
+      </div>
+      <br>
+      
       <% else %>
-        <p> Não existe nenhum instituto cadastrado correspondente à essa descrição. </p>
+        <p> Não existe nenhum instituto cadastrado com o(s) termo(s) <%= params[:search] %>. </p>
+        <a class="btn btn-default btn-sm" <%= link_to 'Voltar', institutos_path %></a>
+        <br> <br>
       <% end %>
-  </tbody>
-</table>
-<div class="text-center">
-  <div class="pagination">
-  <table>
-    <tr>
-      <td ><%= paginate @institutos %></td>
-  <tr>
-</table>
-</div>
-</div>
-
-</div>
-</div>
-<br>
+  
 <% if can? :pesq, Instituto %>
 <a class="btn btn-primary btn-sm" <%= link_to 'Novo Instituto', new_instituto_path %></a>
 <%end%>

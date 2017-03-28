@@ -4,6 +4,7 @@ class EquipamentosController < ApplicationController
   # GET /equipamentos
   # GET /equipamentos.json
   def index
+    @equipamentos = Equipamento.all;
     if params[:search]
         @equipamentos = Equipamento.where("descricao like ?", "%#{params[:search]}%").page(params['page']).per(4);
     else
