@@ -1,0 +1,29 @@
+<div align="center">
+  <h3>Sugestões</h3>
+
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+   
+   <table>
+    <tr>
+    <td><%= f.input :name, :required => true %></td>
+    </tr>
+    
+     <tr>
+    <td><%= f.input :email, :required => true %></td>
+    </tr>
+    
+     <tr>
+    <td><%= f.input :message, :as => :text, :required => true %></td>
+    </tr>
+    
+    <div class= "hidden">
+      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+    </div>
+    <div>
+    </table>
+      
+      </br>
+      <%= f.button :submit, 'Enviar', :class=> "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

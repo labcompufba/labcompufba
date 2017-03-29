@@ -2,6 +2,8 @@
 Rails.application.routes.draw do
 
 
+ 
+  resources :manuequips
   devise_for :users
   resources :application
   root 'application#index'
@@ -15,7 +17,12 @@ Rails.application.routes.draw do
   root 'labequips#index'
   resources :user
   root 'user#index'
-  
+  resources :manutentions
+  root 'manutentions#index'
+  resources :manuequips
+   
+  resources "contacts", only: [:new, :create]
+
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'

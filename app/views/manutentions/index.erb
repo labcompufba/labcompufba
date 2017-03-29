@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div id="list" class="row">
+
+<div class="table-responsive col-md-12">
+<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+  <thead>
+    <tr>
+      <th>Data manutencao</th>
+      <th>Usuario manutencao</th>
+      <th>Fornecedor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manutentions.each do |manutention| %>
+      <tr>
+        <td><%= manutention.data_manutencao %></td>
+        <td><%= manutention.usuario_manutencao %></td>
+        <td><%= manutention.fornecedor %></td>
+         <td class="actions">
+            <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_manutention_path(manutention) %></a>
+            <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', manutention, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
+            <a class="btn btn-primary btn-xs" href="/manuequips "> Equipamentos</a>
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <a class="btn btn-primary btn-sm" <%= link_to 'Novo Laboratório', new_manutention_path %></a>

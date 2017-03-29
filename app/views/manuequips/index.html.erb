@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div id="list" class="row">
+
+<div class="table-responsive col-md-12">
+<table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+  <thead>
+    <tr>
+      <th>Laboratório</th>
+      <th>Equipamento</th>
+      <th>Num. Tombamento</th>
+      <th>Manutenção</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manuequips.each do |manuequip| %>
+      <tr>
+        <td><%= manuequip.laboratorio.sigla %></td>
+        <td><%= manuequip.equipamento.descricao %></td>
+        <td><%= manuequip.numero_tombamento %></td>
+        <td><input id="manutencao" name="manutencao" type="checkbox" disabled="disabled" <% if manuequip.manutencao %> checked <%end%> /></td>
+        <td class="actions">
+          <a class="btn btn-success btn-xs"<%= link_to 'Incluir',{:controller => "manuequips", :action => "create", :baixa => params[true]} %> </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+   
+

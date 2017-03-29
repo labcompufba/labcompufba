@@ -1,0 +1,1 @@
+json.array! @manuequips, partial: 'manuequips/manuequip', as: :manuequip

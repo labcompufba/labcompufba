@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manutencao_id: 1
+  equipamento_id: 1
+  labequip_id: 1
+  baixa: false
+
+two:
+  manutencao_id: 1
+  equipamento_id: 1
+  labequip_id: 1
+  baixa: false

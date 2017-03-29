@@ -1,0 +1,1 @@
+json.array! @manutentions, partial: 'manutentions/manutention', as: :manutention

@@ -45,7 +45,7 @@
         <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
         <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
         <li><a class="glyphicon glyphicon-book" href="/laboratorios"> <span class = "p"> Laboratórios</span></a></li>
-        <!--<li><a class="glyphicon glyphicon-user" href="/"> <span class = "p"> Manutenção</span></a></li>-->
+        <li><a class="glyphicon glyphicon-user" href="/manutentions"> <span class = "p"> Manutenção</span></a></li>
       </ul>
     </div>
      </nav>
@@ -58,7 +58,7 @@
                 <div class="navbar-collapse collapse" id="footer-body">
                     <ul class="nav navbar-nav">
                         <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="/contacts/new">Contato</a></li>
                         <li><a class ="nav navbar-nav pull-right" href="https://github.com/labcompufba/labcompufba" title="github" target="_blank"><i class="fa fa-github fa-2x"></i></a></li> 
                         <% if user_signed_in? %>
                              <li><a ><i class="fa fa-user fa"> Usuário Logado:<%= current_user.nome %></i></a></li> 
@@ -71,11 +71,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <ul class="footer-bar-btns visible-xs">
-                        <li><a href="#" class="btn" title="History"><i class="fa fa-2x fa-clock-o blue-text"></i></a></li>
-                        <li><a href="#" class="btn" title="Favourites"><i class="fa fa-2x fa-star yellow-text"></i></a></li>
-                        <li><a href="#" class="btn" title="Subscriptions"><i class="fa fa-2x fa-rss-square orange-text"></i></a></li>
-                    </ul>
                 </div>
     
             </div>

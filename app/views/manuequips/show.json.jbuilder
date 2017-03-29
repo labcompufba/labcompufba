@@ -1,0 +1,1 @@
+json.partial! "manuequips/manuequip", manuequip: @manuequip

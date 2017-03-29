@@ -1,0 +1,31 @@
+<%= form_for(manutention) do |f| %>
+  <% if manutention.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(manutention.errors.count, "error") %> prohibited this manutention from being saved:</h2>
+
+      <ul>
+      <% manutention.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data_manutencao %>
+    <%= f.date_select :data_manutencao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :usuario_manutencao %>
+    <%= f.text_field :usuario_manutencao %>
+  </div>
+    <div class="field">
+    <%= f.label :fornecedor %>
+    <%= f.text_field :fornecedor %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Manutencao:</strong>
+  <%= @manuequip.manutencao_id %>
+</p>
+
+<p>
+  <strong>Equipamento:</strong>
+  <%= @manuequip.equipamento_id %>
+</p>
+
+<p>
+  <strong>Labequip:</strong>
+  <%= @manuequip.labequip_id %>
+</p>
+
+<p>
+  <strong>Baixa:</strong>
+  <%= @manuequip.baixa %>
+</p>
+
+<%= link_to 'Edit', edit_manuequip_path(@manuequip) %> |
+<%= link_to 'Back', manuequips_path %>

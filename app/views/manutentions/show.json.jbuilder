@@ -1,0 +1,1 @@
+json.partial! "manutentions/manutention", manutention: @manutention

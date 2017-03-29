@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  labequip_id: 1
+  data_manutencao: 2017-03-28
+  usuario_manutencao: MyString
+  baixa: false
+  data_baixa: 2017-03-28
+
+two:
+  labequip_id: 1
+  data_manutencao: 2017-03-28
+  usuario_manutencao: MyString
+  baixa: false
+  data_baixa: 2017-03-28

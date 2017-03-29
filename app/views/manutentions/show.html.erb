@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Data manutencao:</strong>
+  <%= @manutention.data_manutencao %>
+</p>
+
+<p>
+  <strong>Usuario manutencao:</strong>
+  <%= @manutention.usuario_manutencao %>
+</p>
+
+<p>
+  <strong>Baixa:</strong>
+  <%= @manutention.baixa %>
+</p>
+
+<p>
+  <strong>Data baixa:</strong>
+  <%= @manutention.data_baixa %>
+</p>
+
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @manutention.fornecedor %>
+</p>
+
+
+<%= link_to 'Edit', edit_manutention_path(@manutention) %> |
+<%= link_to 'Back', manutentions_path %>
