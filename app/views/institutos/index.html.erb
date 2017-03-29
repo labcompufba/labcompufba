@@ -60,3 +60,4 @@
 <% if can? :pesq, Instituto %>
 <a class="btn btn-primary btn-sm" <%= link_to 'Novo Instituto', new_instituto_path %></a>
 <%end%>
+<a class="btn btn-default btn-sm" <%= link_to 'Imprimir', institutos_path(format: :pdf), target: '_blank' %></a> 

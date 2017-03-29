@@ -9,6 +9,14 @@ class LaboratoriosController < ApplicationController
     else
          @laboratorios = Laboratorio.order(:instituto_id,:nome).page(params['page']).per(4);
     end
+    
+    respond_to do |format|
+      format.html
+
+      format.pdf { render pdf: "",
+        footer: { center: "[page] of [topage]" }
+      }
+    end      
   end
 
   # GET /laboratorios/1

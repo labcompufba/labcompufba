@@ -57,14 +57,13 @@ ActiveRecord::Schema.define(version: 20170328232001) do
   end
 
   create_table "manutentions", force: :cascade do |t|
-    t.integer  "labequip_id"
     t.date     "data_manutencao"
     t.string   "usuario_manutencao"
     t.boolean  "baixa"
     t.date     "data_baixa"
+    t.string   "fornecedor"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "fornecedor"
   end
 
   create_table "pesquisadors", force: :cascade do |t|

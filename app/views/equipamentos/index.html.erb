@@ -53,3 +53,4 @@
  <% if can? :pesq, Equipamento %>
    <a class=" btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', new_equipamento_path %></a>
 <%end%>
+   <a class="btn btn-default btn-sm" <%= link_to 'Imprimir', equipamentos_path(format: :pdf), target: '_blank' %></a>

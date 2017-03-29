@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>Relatório de Equipamentos do Laboratório</title>
+</head>
+
+<body>
+  <header>
+    <table>
+    <tr>
+      <td><%= wicked_pdf_image_tag 'images/brasao_ufba.jpg', :width => "80",  :height=>"110" %></td>
+      <td colspan="2"></td><center><b>Relatório de Equipamentos do Laboratório</b></center></td>
+    </tr>
+    </table>
+  </header>  
+  
+  <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+    <tr>
+      <td><b>Laboratório</b></td>
+      <td><b>Equipamento</b></td>
+      <td><b>Qtd.</b></td>
+      <td><b>Num. Tombamento</b></td>
+      <td><b>Manutenção</b></td>
+      <th colspan="5"></th>
+    </tr>
+    
+    <% @labequips.each do |labequip| %>
+    <tr>
+      <td><%= labequip.laboratorio.sigla %></td>
+      <td><%= labequip.equipamento.descricao %></td>
+      <td><%= labequip.quantidade %></td>
+      <td><%= labequip.numero_tombamento %></td>
+      <td><input id="manutencao" name="manutencao" type="checkbox" disabled="disabled" <% if labequip.manutencao %> checked <%end%> /></td>
+      <th colspan="5"></th>
+    </tr>
+    <% end %>
+      
+  </table>  
+</body>
+</html>  
+      
+
+     
+      
+

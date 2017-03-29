@@ -59,4 +59,5 @@
 <% if can? :pesq, Laboratorio %>
   <a class="btn btn-primary btn-sm" <%= link_to 'Novo Laboratório', new_laboratorio_path %></a>
 <%end%>
+  <a class="btn btn-default btn-sm" <%= link_to 'Imprimir', laboratorios_path(format: :pdf), target: '_blank' %></a> 
 

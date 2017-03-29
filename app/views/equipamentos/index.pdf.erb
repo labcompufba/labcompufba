@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>Relatório de Equipamentos</title>
+</head>
+
+<body>
+  <header>
+    <table>
+    <tr>
+      <td><%= wicked_pdf_image_tag 'images/brasao_ufba.jpg', :width => "80",  :height=>"110" %></td>
+      <td colspan="2"></td><center><b>Relatório de Equipamentos</b></center></td>
+    </tr>
+    </table>
+  </header>   
+  <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+
+
+    <tr>
+      <td><b>Descrição</b></td>
+      <th colspan="1"></th>
+    </tr>
+    
+    <% @equipamentos.each do |equipamento| %>
+    <tr>
+      <td><%= equipamento.descricao %></td>
+      <th colspan="1"></th>
+    </tr>
+    <% end %>
+      
+  </table>  
+</body>
+</html>  
+      
+
+     
+      
+

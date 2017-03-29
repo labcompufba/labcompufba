@@ -5,6 +5,14 @@ class LabequipsController < ApplicationController
   # GET /labequips.json
   def index
     @labequips = Labequip.where(laboratorio_id: params[:laboratorio_id])
+    
+    respond_to do |format|
+      format.html
+
+      format.pdf { render pdf: "",
+        footer: { center: "[page] of [topage]" }
+      }
+    end     
   end
 
   # GET /labequips/1
