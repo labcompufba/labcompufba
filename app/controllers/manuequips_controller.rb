@@ -4,7 +4,9 @@ class ManuequipsController < ApplicationController
   # GET /manuequips
   # GET /manuequips.json
   def index
-    @manuequips = Labequip.where(manutencao: true)
+      @manuequips = Labequip.where(" manutencao_id=:manutencao_id and manutencao = :manutencao",
+  {manutencao:true,manutencao_id:false})
+  
   end
 
   # GET /manuequips/1
@@ -22,24 +24,29 @@ class ManuequipsController < ApplicationController
   end
 
 def incluir
-    @manuequip = Manuequip.new(manuequip_params)
-  conn = ActiveRecord::Base.connection
- conn.execute "insert into manuequips(equipamento_id) values(1);"
-  format.html { redirect_to @manuequip, notice: 'Manuequip was successfully created.' }
-end
+      @manuequip = Manuequip.new()
+      @manuequip.manutencao_id =params [:manutencao_id]
+      @manuequip.labequip_id = params [:labequip_id]
+    respond_to do |format|
+     @manuequip.save
+    format.html { redirect_to @manuequip, notice: 'Item adicionado!' }
+    end  
+    @labequip = Labequip.find(params [:labequip_id])
+    @labequip.update(manutencao_id: true)
+end 
+
   # POST /manuequips
   # POST /manuequips.json
   def create
-    @manuequip = Manuequip.new(manuequip_params)
-
+    @manuequip = Manuequip.new()
+      @manuequip.manutencao_id =params [:manutencao_id]
+      @manuequip.labequip_id = params [:labequip_id]
     respond_to do |format|
-      if @manuequip.save
-        format.html { redirect_to @manuequip, notice: 'Manuequip was successfully created.' }
-      else
-        format.html { render :new }
-        format.json { render json: @manuequip.errors, status: :unprocessable_entity }
-      end
-    end
+     @manuequip.save
+    format.html { redirect_to @manuequip, notice: 'Item adicionado!' }
+    end  
+    @labequip = Labequip.find(params [:labequip_id])
+    @labequip.update(manutencao_id: true)
   end
 
   # PATCH/PUT /manuequips/1

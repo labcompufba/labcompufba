@@ -29,5 +29,12 @@ Rails.application.routes.draw do
     get '/perfil' => 'devise/registrations#edit'
     get '/user' => 'user#index'
   end
+  
+  
+ resources :manuequips do
+     member do
+       get 'incluir'
+      end
+   end
 
 end
