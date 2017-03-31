@@ -1,63 +1,71 @@
-<%= form_tag(laboratorios_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Digite o Laboratório" %>
-<%= submit_tag "Buscar" %>
-<% end %>
+<% if @temlab == 0 %>
+<p> Não existe nenhum laboratório cadastrado. </p>
+<br> 
 
-    <% if @laboratorios.present? %>
-    <p id="notice"><%= notice %></p>
-    <div id="list" class="row">
-    <div class="table-responsive col-md-12">
-    <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
-      <thead>
-        <tr>
-          <th>Instituto</th>
-          <th>Nome</th>
-          <th>Local</th>
-          <th>Sigla</th>
-          <th colspan="4"></th>
-        </tr>
-      </thead>
-    
-      <tbody>
-    
-      <% @laboratorios.each do |laboratorio| %>
-        <tr>
-          <td><%= laboratorio.instituto.sigla%></td>
-          <td><%= laboratorio.nome %></td>
-          <td><%= laboratorio.local %></td>
-          <td><%= laboratorio.sigla %></td>
-           <td class="actions">
-            <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', laboratorio %> </a>
-            <% if can? :pesq, Laboratorio %>
-            <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></a>
-            <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', laboratorio, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
-            <%end%>
-            <a class="btn btn-primary btn-xs"<%= link_to 'Equipamentos', {:controller => "labequips", :action => "index", :laboratorio_id => laboratorio.id}%> </a>
-          </td>
-        </tr>
-      <% end %>
-      </tbody>
-      </table>
-      
-      <div class="text-center">
-        <div class="pagination">
-        <table>
+<%else %>
+  <%= form_tag(laboratorios_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Digite o Laboratório" %>
+  <%= submit_tag "Buscar" %>
+  <% end %>
+  
+      <% if @laboratorios.present? %>
+      <p id="notice"><%= notice %></p>
+      <div id="list" class="row">
+      <div class="table-responsive col-md-12">
+      <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+        <thead>
           <tr>
-            <td ><%= paginate @laboratorios %></td>
-        <tr>
-      </table>
-      </div>
-      </div>
+            <th>Instituto</th>
+            <th>Nome</th>
+            <th>Local</th>
+            <th>Sigla</th>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
       
-      <% else %>
-      <br>
-        <p> Não existe nenhum laboratório cadastrado com o(s) termo(s) <%= params[:search] %>. </p>
-        <a class="btn btn-default btn-sm" <%= link_to 'Voltar', laboratorios_path %></a>
-       <br> <br>
-      <% end %>
+        <tbody>
+      
+        <% @laboratorios.each do |laboratorio| %>
+          <tr>
+            <td><%= laboratorio.instituto.sigla%></td>
+            <td><%= laboratorio.nome %></td>
+            <td><%= laboratorio.local %></td>
+            <td><%= laboratorio.sigla %></td>
+             <td class="actions">
+              <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', laboratorio %> </a>
+              <% if can? :pesq, Laboratorio %>
+              <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></a>
+              <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', laboratorio, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
+              <%end%>
+              <a class="btn btn-primary btn-xs"<%= link_to 'Equipamentos', {:controller => "labequips", :action => "index", :laboratorio_id => laboratorio.id}%> </a>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+        </table>
+        
+        <div class="text-center">
+          <div class="pagination">
+          <table>
+            <tr>
+              <td ><%= paginate @laboratorios %></td>
+          <tr>
+        </table>
+        </div>
+        </div>
+        
+        <% else %>
+        <br>
+          <p> Não existe nenhum laboratório cadastrado com o(s) termo(s) <%= params[:search] %>. </p>
+          <a class="btn btn-default btn-sm" <%= link_to 'Voltar', laboratorios_path %></a>
+         <br> <br>
+        <% end %>
+  
+  <a class="btn btn-default btn-sm" <%= link_to 'Imprimir', laboratorios_path(format: :pdf), target: '_blank' %></a>      
+<%end %>
 
 <% if can? :pesq, Laboratorio %>
   <a class="btn btn-primary btn-sm" <%= link_to 'Novo Laboratório', new_laboratorio_path %></a>
 <%end%>
-  <a class="btn btn-default btn-sm" <%= link_to 'Imprimir', laboratorios_path(format: :pdf), target: '_blank' %></a> 
+   
 

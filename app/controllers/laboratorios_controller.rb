@@ -4,6 +4,13 @@ class LaboratoriosController < ApplicationController
   # GET /laboratorios
   # GET /laboratorios.json
     def index
+    @laboratorios = Laboratorio.all;
+    if @laboratorios.present?
+      @temlab = 1;
+    else
+      @temlab = 0;
+    end
+    
     if params[:search]
          @laboratorios = Laboratorio.where("nome like ?", "%#{params[:search]}%").page(params['page']).per(5);
     else
