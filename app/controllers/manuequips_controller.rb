@@ -4,8 +4,8 @@ class ManuequipsController < ApplicationController
   # GET /manuequips
   # GET /manuequips.json
   def index
-    if params[:listar] == true
-      @manuequips = Manuequip.where(manutencao_id: params[:manutencao_id])
+    if params[:listar] == 'true'
+       @manuequips = Manuequip.where(manutencao_id: params[:manutencao_id])
     else
        @manuequips = Labequip.where(" manutencao_id=:manutencao_id and manutencao = :manutencao",
        {manutencao:true,manutencao_id:false})
@@ -13,7 +13,6 @@ class ManuequipsController < ApplicationController
   
   end
   
- 
 
   # GET /manuequips/1
   # GET /manuequips/1.json
@@ -30,12 +29,12 @@ class ManuequipsController < ApplicationController
   end
 
 def incluir
-      @manuequip = Manuequip.new()
-      @manuequip.manutencao_id  =  params[:manutencao_id]
-      @manuequip.labequip_id    =  params[:labequip_id]
+     @manuequip = Manuequip.new()
+     @manuequip.manutencao_id  =  params[:manutencao_id]
+     @manuequip.labequip_id    =  params[:labequip_id]
     respond_to do |format|
      @manuequip.save
-  format.html { redirect_to "/manuequips/", notice: 'Item adicionado!' }
+      format.html { redirect_to "/manuequips/", notice: 'Item adicionado!' }
     end  
     @labequip = Labequip.find(params[:labequip_id])
     @labequip.update(manutencao_id: true)

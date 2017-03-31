@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <table >
-<%@listar=params['listar'] %>
+<%@listar=params[:listar] %>
     <tr>
       <th>Fornecedor:  <%= params['fornecedor'] %> </th>  
 
@@ -14,15 +14,15 @@
 <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
   <thead>
     <tr>
-       <%if @listar== true%>
-         <th>Fornecedor</th>
-        <%else%>
+       <%if @listar=='false'%>
          <th>Laboratório</th>
-        <%end%>
-        
+         <th>Equipamento</th>
+        <th>Num. Tombamento</th>
+           <th>Manutenção</th>
+        <%else %>
         <th>Equipamento</th>
         <th>Num. Tombamento</th>
-        <th>Manutenção</th>
+        <%end%>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,9 +31,8 @@
     
     <% @manuequips.each do |manuequip| %>
       <tr>
-        <%if @listar==true%>
-          <td><%= manuequip.manutencao_id %></td>
-          <td><%= manuequip.labequip_id %></td>
+        <%if @listar=='true'%>
+          <td><%= manuequip.labequip.equipamento.descricao %></td>
           <td><%= manuequip.labequip.numero_tombamento %></td>
            <%else%>
            <td><%= manuequip.laboratorio.sigla %></td>
@@ -43,7 +42,9 @@
         <%end%>
        
         <td class="actions">
+        <%if @listar=='false'%>
             <a class="btn btn-primary btn-xs"<%= link_to 'Incluir',incluir_manuequip_path(manuequip,:manutencao_id =>params[:manutencao_id], :labequip_id => manuequip.id,:listar=>false) %> </a>
+        <%end%>
         </td>
       </tr>
     <% end %>
