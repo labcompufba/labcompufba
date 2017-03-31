@@ -45,7 +45,9 @@
         <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
         <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
         <li><a class="glyphicon glyphicon-book" href="/laboratorios"> <span class = "p"> Laboratórios</span></a></li>
-        <li><a class="glyphicon glyphicon-user" href="/manutentions"> <span class = "p"> Manutenção</span></a></li>
+        <% if can? :manage,@users %>
+           <li><a class="glyphicon glyphicon-user" href="/manutentions"> <span class = "p"> Manutenção</span></a></li>
+        <%end%>
       </ul>
     </div>
      </nav>
@@ -57,7 +59,6 @@
             <div class="container">
                 <div class="navbar-collapse collapse" id="footer-body">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Sobre</a></li>
                         <li><a href="/contacts/new">Contato</a></li>
                         <li><a class ="nav navbar-nav pull-right" href="https://github.com/labcompufba/labcompufba" title="github" target="_blank"><i class="fa fa-github fa-2x"></i></a></li> 
                         <% if user_signed_in? %>

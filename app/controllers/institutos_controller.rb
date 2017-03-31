@@ -5,9 +5,9 @@ class InstitutosController < ApplicationController
   # GET /institutos.json
   def index
     if params[:search]
-        @institutos = Instituto.where("nome like ?", "%#{params[:search]}%").page(params['page']).per(4);
+        @institutos = Instituto.where("nome like ?", "%#{params[:search]}%").page(params['page']).per(5);
     else
-        @institutos = Instituto.order(:nome).page(params['page']).per(4);
+        @institutos = Instituto.order(:nome).page(params['page']).per(5);
     end
     
     respond_to do |format|

@@ -2,7 +2,7 @@ class UserController < ApplicationController
   
   
   def index
-     @users = User.all
+     @users = User.order(:nome).page(params['page']).per(5);
   end
   
   def new

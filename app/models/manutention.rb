@@ -1,3 +1,3 @@
 class Manutention < ApplicationRecord
-    belongs_to :labequip
+    has_many :manuequips
 end

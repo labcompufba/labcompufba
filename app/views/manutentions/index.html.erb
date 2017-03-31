@@ -21,11 +21,11 @@
          <td class="actions">
             <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_manutention_path(manutention) %></a>
             <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', manutention, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
-            <%= link_to 'Equipamentos', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id}%> </a>
+            <a class="btn btn-primary btn-xs"<%= link_to 'Equipamentos', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id,:fornecedor =>manutention.fornecedor ,:listar =>false}%> </a>
           </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-  <a class="btn btn-primary btn-sm" <%= link_to 'Novo Laboratório', new_manutention_path %></a>
+  <a class="btn btn-primary btn-sm" <%= link_to 'Nova Manutenção', new_manutention_path %></a>

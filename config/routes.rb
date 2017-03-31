@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources :manutentions
   root 'manutentions#index'
   resources :manuequips
-   
+  root 'manuequips#index' 
+  get 'incluir'=> 'manuequips#incluir'
+  
   resources "contacts", only: [:new, :create]
 
   devise_scope :user do
@@ -29,12 +31,15 @@ Rails.application.routes.draw do
     get '/perfil' => 'devise/registrations#edit'
     get '/user' => 'user#index'
   end
-  
-  
+
  resources :manuequips do
      member do
-       get 'incluir'
+       get 'incluir'=> 'manuequips#incluir'
       end
    end
+   
+
+
+
 
 end

@@ -35,9 +35,15 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
+<div class="text-center">
+        <div class="pagination">
+        <table>
+          <tr>
+            <td ><%= paginate @labequips %></td>
+        <tr>
+      </table>
+      </div>
+      </div>
 <% if can? :pesq, Instituto %>
  <a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', {:controller => "labequips", :action => "new", :laboratorio_id => params[:laboratorio_id]} %></a>
  <a class="btn btn-default btn-sm" <%= link_to 'Voltar', laboratorios_url %></a>

@@ -6,9 +6,9 @@ class EquipamentosController < ApplicationController
   def index
     @equipamentos = Equipamento.all;
     if params[:search]
-        @equipamentos = Equipamento.where("descricao like ?", "%#{params[:search]}%").page(params['page']).per(4);
+        @equipamentos = Equipamento.where("descricao like ?", "%#{params[:search]}%").page(params['page']).per(5);
     else
-        @equipamentos = Equipamento.order(:descricao).page(params['page']).per(4);
+        @equipamentos = Equipamento.order(:descricao).page(params['page']).per(5);
     end
     
     respond_to do |format|

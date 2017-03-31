@@ -29,7 +29,7 @@ class ManutentionsController < ApplicationController
 
     respond_to do |format|
       if @manutention.save
-        format.html { redirect_to @manutention, notice: 'Manutention was successfully created.' }
+        format.html { redirect_to @manutention, notice: 'Manutenção Criada com Sucesso!' }
         format.json { render :show, status: :created, location: @manutention }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ManutentionsController < ApplicationController
   def update
     respond_to do |format|
       if @manutention.update(manutention_params)
-        format.html { redirect_to @manutention, notice: 'Manutention was successfully updated.' }
+        format.html { redirect_to @manutention, notice: 'Manutenção Atualizada com Sucesso!' }
         format.json { render :show, status: :ok, location: @manutention }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ManutentionsController < ApplicationController
   def destroy
     @manutention.destroy
     respond_to do |format|
-      format.html { redirect_to manutentions_url, notice: 'Manutention was successfully destroyed.' }
+      format.html { redirect_to manutentions_url, notice: 'Manutenção Deletada com Sucesso!' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class ManutentionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manutention_params
-      params.require(:manutention).permit(:labequip_id, :data_manutencao, :usuario_manutencao, :baixa, :data_baixa)
+      params.require(:manutention).permit(:labequip_id, :data_manutencao, :usuario_manutencao, :baixa, :data_baixa,:fornecedor)
     end
 end

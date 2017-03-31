@@ -5,9 +5,9 @@ class LaboratoriosController < ApplicationController
   # GET /laboratorios.json
     def index
     if params[:search]
-         @laboratorios = Laboratorio.where("nome like ?", "%#{params[:search]}%").page(params['page']).per(4);
+         @laboratorios = Laboratorio.where("nome like ?", "%#{params[:search]}%").page(params['page']).per(5);
     else
-         @laboratorios = Laboratorio.order(:instituto_id,:nome).page(params['page']).per(4);
+         @laboratorios = Laboratorio.order(:instituto_id,:nome).page(params['page']).per(5);
     end
     
     respond_to do |format|

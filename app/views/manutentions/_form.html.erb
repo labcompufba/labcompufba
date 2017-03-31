@@ -10,21 +10,32 @@
       </ul>
     </div>
   <% end %>
+<table >
+   <tr>
+    <td><%= f.label :data_manutencao %></td>
+    <td><%= f.date_select :data_manutencao %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+  <tr>
+    <td><%= f.label :usuario_manutencao %></td>
+    <td><%= f.text_field :usuario_manutencao,:value =>current_user.nome, :readonly => true %></td>
+  </tr>
+  <tr><td><br></td></tr>
+    
+  <tr>
+    <td><%= f.label :fornecedor %></td>
+    <td><%= f.text_field :fornecedor %></td>
+  </tr>
+  <tr><td><br></td></tr>
 
-  <div class="field">
-    <%= f.label :data_manutencao %>
-    <%= f.date_select :data_manutencao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :usuario_manutencao %>
-    <%= f.text_field :usuario_manutencao %>
-  </div>
-    <div class="field">
-    <%= f.label :fornecedor %>
-    <%= f.text_field :fornecedor %>
-  </div>
-
+  <tr>
+    <td> <%= f.label :baixa %></td>
+     <td><%= f.check_box :baixa %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+</table>
   <div class="actions">
     <%= f.submit %>
   </div>
