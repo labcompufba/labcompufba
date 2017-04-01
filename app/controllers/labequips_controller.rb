@@ -49,7 +49,7 @@ class LabequipsController < ApplicationController
 
     respond_to do |format|
       if @labequip.save
-        format.html { redirect_to @labequip, notice: 'Labequip was successfully created.' }
+        format.html { redirect_to @labequip, notice: 'O equipamento foi cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @labequip }
       else
         format.html { render :new }
@@ -63,7 +63,7 @@ class LabequipsController < ApplicationController
   def update
     respond_to do |format|
       if @labequip.update(labequip_params)
-        format.html { redirect_to @labequip, notice: 'Labequip was successfully updated.' }
+        format.html { redirect_to @labequip, notice: 'O equipamento foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @labequip }
       else
         format.html { render :edit }
@@ -77,7 +77,7 @@ class LabequipsController < ApplicationController
   def destroy
     @labequip.destroy
     respond_to do |format|
-      format.html { redirect_to ({:action => "index", :laboratorio_id => @labequip.laboratorio.id}), notice: 'Labequip was successfully destroyed.' }
+      format.html { redirect_to ({:action => "index", :laboratorio_id => @labequip.laboratorio.id}), notice: 'O equipamento foi deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

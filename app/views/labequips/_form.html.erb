@@ -21,25 +21,25 @@
     <tr>
       <td><%= f.label :Equipamento %></td>
       
-        <td><%= collection_select(:labequip, :equipamento_id, @equipamentos, :id, :descricao, prompt: "true") %></td>
+        <td><%= collection_select(:labequip, :equipamento_id, @equipamentos, :id, :descricao) %></td>
     </tr>
     <tr><td><br></td></tr>
 
     <tr>
       <td> <%= f.label :quantidade %></td>
-      <td class="col-md-9" ><%= f.number_field :quantidade %></td>
+      <td class="col-md-9" ><%= f.number_field :quantidade, min: 1%></td>
     </tr>
     <tr><td><br></td></tr>
     
      <tr>
-      <td> <%= f.label :numero_tombamento %></td>
+      <td> <%= f.label :numero_tombamento, "Número de tombamento" %></td>
       <td class="col-md-9" > <%= f.text_field :numero_tombamento %></td>
      </tr>
     <tr><td><br></td></tr>
     
     
     <tr>
-      <td> <%= f.label :manutencao %>
+      <td> <%= f.label :manutencao, "Manutenção" %>
      <td><%= f.check_box :manutencao %></td>
     </tr>
     <tr><td><br></td></tr>
@@ -48,6 +48,6 @@
     
 </table>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Cadastrar" %>
   </div>
 <% end %>

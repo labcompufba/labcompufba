@@ -44,9 +44,10 @@
       </table>
       </div>
       </div>
-<% if can? :pesq, Instituto %>
- <a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', {:controller => "labequips", :action => "new", :laboratorio_id => params[:laboratorio_id]} %></a>
- <a class="btn btn-default btn-sm" <%= link_to 'Voltar', laboratorios_url %></a>
-<%end%>     
-<a class="btn btn-default btn-sm" <%= link_to 'Imprimir', {:controller => "labequips", :action => "index", :laboratorio_id => params[:laboratorio_id], format: :pdf}, target: '_blank' %></a> 
 
+<% if can? :pesq, Instituto %>
+ <a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', {:controller => "labequips", :action => "new", :laboratorio_id => params[:laboratorio_id]} %></a> <br> <br>
+<%end%>     
+
+<a class="btn btn-default btn-sm" <%= link_to 'Imprimir', {:controller => "labequips", :action => "index", :laboratorio_id => params[:laboratorio_id], format: :pdf}, target: '_blank' %></a> 
+<a class="btn btn-default btn-sm" <%= link_to 'Voltar', laboratorios_url %></a>
