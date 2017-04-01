@@ -11,14 +11,15 @@
     </div>
   <% end %>
 <table >
+   <col width="150">
    <tr>
-    <td><%= f.label :data_manutencao %></td>
+    <td><%= f.label :data_manutencao, "Data da manutenção" %></td>
     <td><%= f.date_select :data_manutencao %></td>
   </tr>
   <tr><td><br></td></tr>
   
   <tr>
-    <td><%= f.label :usuario_manutencao %></td>
+    <td><%= f.label :usuario_manutencao, "Usuário responsável" %></td>
     <td><%= f.text_field :usuario_manutencao,:value =>current_user.nome, :readonly => true %></td>
   </tr>
   <tr><td><br></td></tr>
@@ -36,7 +37,8 @@
   <tr><td><br></td></tr>
   
 </table>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="actions">
+  <%= f.submit "Criar Manutenção" %>
+</div>
+
 <% end %>

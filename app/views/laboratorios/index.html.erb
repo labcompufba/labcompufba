@@ -7,6 +7,7 @@
   <%= text_field_tag :search, params[:search], placeholder: "Digite o Laboratório" %>
   <%= submit_tag "Buscar" %>
   <% end %>
+  <br>
   
       <% if @laboratorios.present? %>
       <p id="notice"><%= notice %></p>
