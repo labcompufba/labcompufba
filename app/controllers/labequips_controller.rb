@@ -66,7 +66,8 @@ class LabequipsController < ApplicationController
     respond_to do |format|
       if @labequip.update(labequip_params)
         if @labequip.manutencao == true
-         HomeMailer.nova_manutencao(current_user.nome,'keniiarruda@gmail.com',@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now
+          @usuario_email = User.where(" admin=:admin",{admin:true})
+         HomeMailer.nova_manutencao(current_user.nome,@usuario_email.email,@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now
         end  
         format.html { redirect_to @labequip, notice: 'O equipamento foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @labequip }
