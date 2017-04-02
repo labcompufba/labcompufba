@@ -5,8 +5,7 @@ class HomeMailer < ApplicationMailer
     @sobrenome = sobrenome
     @email = email
 
-    mail to: @email,
-         subject: 'Boas vindas'
+    mail to: @email,subject: 'Boas vindas'
   end
 end 
 
