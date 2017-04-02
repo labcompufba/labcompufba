@@ -22,5 +22,7 @@
  <div><%= f.check_box :admin, {}, true %> <%= f.label :admin, "Administrador" %> </div>
     <div><%= f.check_box :pesq, {}, true %> <%= f.label :pesq, "Pesquisador" %> </div>
 </table>
-<p><%= f.submit "Submit" %></p>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary btn-sm'%>
+  </div>
 <% end %>

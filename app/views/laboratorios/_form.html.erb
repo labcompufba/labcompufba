@@ -36,10 +36,17 @@
   <tr>
  <tr><td><br></td></tr>
  
+  <tr>
+    <td><%= f.label :Programa %></td>
+    <td><%= collection_select(:laboratorio, :iprograma_id, @programas, :id, :nome) %></td>
+  <tr>
+ <tr><td><br></td></tr>
+ 
 </table>
 
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary btn-sm'%>
   </div>
   
 <% end %>

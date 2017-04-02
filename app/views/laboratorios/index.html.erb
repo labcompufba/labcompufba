@@ -16,6 +16,7 @@
       <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
         <thead>
           <tr>
+            <th>Programa</th>
             <th>Instituto</th>
             <th>Nome</th>
             <th>Local</th>
@@ -28,6 +29,7 @@
       
         <% @laboratorios.each do |laboratorio| %>
           <tr>
+            <td><%= laboratorio.programa.sigla%></td>
             <td><%= laboratorio.instituto.sigla%></td>
             <td><%= laboratorio.nome %></td>
             <td><%= laboratorio.local %></td>

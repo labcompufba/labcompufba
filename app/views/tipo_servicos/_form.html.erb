@@ -1,0 +1,15 @@
+<%= simple_form_for(@tipo_servico) do |f| %>
+  <%= f.error_notification %>
+  <table>
+    <tr>
+    <td><%= f.label :Serviço %>
+    <td class="col-md-9" ><%= f.text_field :servico %>
+    </td>
+    <tr> 
+   <tr><td><br></td></tr>
+  </table>
+  
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary btn-sm'%>
+  </div>
+<% end %>

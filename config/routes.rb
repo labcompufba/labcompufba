@@ -1,9 +1,5 @@
 
 Rails.application.routes.draw do
-
-
- 
-  resources :manuequips
   devise_for :users
   resources :application
   root 'application#index'
@@ -22,6 +18,10 @@ Rails.application.routes.draw do
   resources :manuequips
   root 'manuequips#index' 
   get 'incluir'=> 'manuequips#incluir'
+  resources :programas 
+  root 'programas#index'
+  resources :tipo_servicos
+  root 'tipo_servicos#index'
   
   resources "contacts", only: [:new, :create]
 

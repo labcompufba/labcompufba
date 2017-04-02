@@ -74,7 +74,7 @@ end
   def destroy
     @manuequip.destroy
     respond_to do |format|
-      format.html { redirect_to manuequips_url, notice: 'Manuequip was successfully destroyed.' }
+      format.html { redirect_to manuequips_url, notice: 'Item retirado!' }
       format.json { head :no_content }
     end
   end

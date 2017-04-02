@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @programa.nome %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @programa.sigla %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @programa.local %>
+</p>
+
+
+
+<a class="btn btn-default btn-sm" <%= link_to 'Voltar', programas_path %></a>

@@ -36,6 +36,7 @@ class LaboratoriosController < ApplicationController
     if can? :pesq, Laboratorio
       @laboratorio = Laboratorio.new
       @institutos = Instituto.all
+      @programas = Programa.all
     else
       redirect_to laboratorios_url
     end
@@ -46,6 +47,7 @@ class LaboratoriosController < ApplicationController
     if can? :pesq, Laboratorio
       @laboratorio = Laboratorio.find(params[:id])
       @institutos = Instituto.all
+     @programas = Programa.all
     else
       redirect_to laboratorios_url
     end
@@ -99,6 +101,6 @@ class LaboratoriosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def laboratorio_params
-      params.require(:laboratorio).permit(:nome, :sigla, :local, :instituto_id)
+      params.require(:laboratorio).permit(:nome, :sigla, :local, :instituto_id,:programa_id)
     end
 end

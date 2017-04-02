@@ -1,0 +1,30 @@
+<%= simple_form_for(@programa) do |f| %>
+  <%= f.error_notification %>
+
+
+
+<table>
+  
+  <tr>
+   <td> <%= f.label :Nome %></td>
+   <td class="col-md-9" width="100" > <%= f.text_field :nome %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+  <tr>
+   <td> <%= f.label :sigla %></td>
+   <td class="col-md-9" width="100" > <%= f.text_field :sigla %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+  <tr>
+   <td> <%= f.label :local %></td>
+   <td class="col-md-9" width="100" > <%= f.text_field :local %></td>
+  </tr>
+  <tr><td><br></td></tr>
+  
+</table>  
+
+ <%= f.button :submit, :class=> 'btn btn-primary btn-sm' %>
+<br>
+<% end %>

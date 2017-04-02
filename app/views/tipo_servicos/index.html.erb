@@ -1,0 +1,28 @@
+     <p id="notice"><%= notice %></p>
+      <div id="list" class="row">
+        <div class="table-responsive col-md-12">
+      <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+        <thead>
+          <tr>
+            <th>Servico</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          
+  <tbody>
+    <% @tipo_servicos.each do |tipo_servico| %>
+      <tr>
+        <td><%= tipo_servico.servico %></td>
+         <td class="actions">
+              <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', tipo_servico %> </a>
+              <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_tipo_servico_path(tipo_servico) %></a>
+              <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', tipo_servico, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
+         </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<a class="btn btn-primary btn-sm" <%= link_to 'Novo Serviço', new_tipo_servico_path %></a>

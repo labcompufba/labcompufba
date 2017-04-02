@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-body { padding-top: 150px; }
-footer { margin-top: 100px; }
+body { padding-top: 90px; }
+footer { margin-top: 90px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 
@@ -95,6 +95,12 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .navbar .nav.pull-right {
      float: right;
     margin-right: 720px; /*set margin this way in your custom styesheet*/
+  }
+  
+  
+  .navbar .nav.pull-left {
+     float: left;
+    margin-left: 10px; /*set margin this way in your custom styesheet*/
   }
   
 .language {right:50px;position:absolute;}
