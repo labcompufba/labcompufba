@@ -38,7 +38,7 @@ class LabequipsController < ApplicationController
       @labequip = Labequip.find(params[:id])
       @laboratorios = Laboratorio.all
       @equipamentos = Equipamento.all
-      @usuario_email = User.where("admin=1")
+      @adm = User.where("admin=:admin",{admin:true})
     else
       redirect_to laboratorios_url
     end
@@ -67,7 +67,7 @@ class LabequipsController < ApplicationController
     respond_to do |format|
       if @labequip.update(labequip_params)
         if @labequip.manutencao == true
-         HomeMailer.nova_manutencao(current_user.nome,@usuario_email.email,@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now
+         HomeMailer.nova_manutencao(current_user.nome,'laboratorioscompartilhadosufba@gmail.com',@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now
         end  
         format.html { redirect_to @labequip, notice: 'O equipamento foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @labequip }
