@@ -1,11 +1,11 @@
 class HomeMailer < ApplicationMailer
 
-  def nova_manutencao(nome, sobrenome, email)
+  def nova_manutencao(nome, email,equipamento,laboratorio)
     @nome = nome
-    @sobrenome = sobrenome
     @email = email
-
-    mail to: @email,subject: 'Boas vindas'
+    @equipamento = equipamento
+    @laboratorio = laboratorio 
+    mail to: @email,subject: 'Requisição de Manutenção foi Solicitada'
   end
 end 
 
