@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'laboratorioscompartilhados@gmail.com$ rails generate mailer home'
   layout 'mailer'
 end
