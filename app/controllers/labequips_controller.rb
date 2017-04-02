@@ -65,7 +65,7 @@ class LabequipsController < ApplicationController
     
     respond_to do |format|
       if @labequip.update(labequip_params)
-        if @labequip.manutencao 
+        if @labequip.manutencao == true
           HomeMailer.nova_manutencao(current_user.nome,current_user.email ,@labequip.equipamento.descricao,@labequip.instituto.nome,'keniiarruda@gmail.com').deliver_now!
         end  
         format.html { redirect_to @labequip, notice: 'O equipamento foi atualizado com sucesso.' }
