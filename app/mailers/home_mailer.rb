@@ -7,5 +7,4 @@ class HomeMailer < ApplicationMailer
     @laboratorio = laboratorio 
     mail to: @email,subject: 'Requisição de Manutenção foi Solicitada'
   end
-end 
-
+end
