@@ -5,7 +5,7 @@ class LabequipsController < ApplicationController
   # GET /labequips.json
   def index
     @labequips = Labequip.where(laboratorio_id: params[:laboratorio_id]).page(params['page']).per(5);
-    
+    @usuario_email = User.where("admin=:admin",{admin:true})
     respond_to do |format|
       format.html
 
@@ -38,6 +38,7 @@ class LabequipsController < ApplicationController
       @labequip = Labequip.find(params[:id])
       @laboratorios = Laboratorio.all
       @equipamentos = Equipamento.all
+      @usuario_email = User.where("admin=1")
     else
       redirect_to laboratorios_url
     end
@@ -66,7 +67,6 @@ class LabequipsController < ApplicationController
     respond_to do |format|
       if @labequip.update(labequip_params)
         if @labequip.manutencao == true
-          @usuario_email = User.where(" admin=:admin",{admin:true})
          HomeMailer.nova_manutencao(current_user.nome,@usuario_email.email,@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now
         end  
         format.html { redirect_to @labequip, notice: 'O equipamento foi atualizado com sucesso.' }
