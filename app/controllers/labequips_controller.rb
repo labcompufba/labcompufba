@@ -62,7 +62,7 @@ class LabequipsController < ApplicationController
   # PATCH/PUT /labequips/1
   # PATCH/PUT /labequips/1.json
   def update
-     HomeMailer.nova_manutencao('Fulano', 'de Tal', 'keniiarruda@gmail.com').deliver_now!
+     HomeMailer.nova_manutencao('Fulano', 'de Tal', 'keniiarruda@gmail.com').deliver_now
     respond_to do |format|
       if @labequip.update(labequip_params)
         format.html { redirect_to @labequip, notice: 'O equipamento foi atualizado com sucesso.' }
