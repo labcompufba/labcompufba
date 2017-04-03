@@ -14,7 +14,7 @@
    <col width="150">
    <tr>
     <td><%= f.label :data_manutencao, "Data da manutenção" %></td>
-    <td><%= f.date_select :data_manutencao %></td>
+    <td><%= f.date_select :data_manutencao, start_year: 2017 %></td>
   </tr>
   <tr><td><br></td></tr>
   
@@ -39,6 +39,6 @@
 </table>
 
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary btn-sm'%>
+    <%= f.submit "Submeter", class: 'btn btn-primary btn-sm'%>
   </div>
 <% end %>

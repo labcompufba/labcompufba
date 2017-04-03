@@ -1,11 +1,13 @@
 <div align="center">
   <h3>Sugestões</h3>
+  <br> <br>
 
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal'} do |f| %>
    
    <table>
+       <col width="150">
     <tr>
-    <td><%= f.input :name, :required => true %></td>
+    <td><%= f.input :name, :required => true %> </td>
     </tr>
     
      <tr>
@@ -22,7 +24,7 @@
     <div>
     </table>
       
-      </br>
+      </br> <br>
       <%= f.button :submit, 'Enviar', :class=> "btn btn-primary" %>
     </div>
   <% end %>

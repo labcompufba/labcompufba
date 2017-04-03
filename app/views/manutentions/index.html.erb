@@ -21,7 +21,7 @@
          <td class="actions">
             <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_manutention_path(manutention) %></a>
             <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', manutention, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
-            <a class="btn btn-success btn-xs"<%= link_to 'Listar Equips.', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id,:fornecedor =>manutention.fornecedor ,:listar =>true}%> </a>
+            <a class="btn btn-success btn-xs"<%= link_to 'Listar Equips', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id,:fornecedor =>manutention.fornecedor ,:listar =>true}%> </a>
             <a class="btn btn-primary btn-xs"<%= link_to 'Adicionar', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id,:fornecedor =>manutention.fornecedor ,:listar =>false}%> </a>
           </td>
       </tr>

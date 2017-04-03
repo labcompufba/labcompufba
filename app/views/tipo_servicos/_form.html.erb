@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <table>
     <tr>
-    <td><%= f.label :Serviço %>
+    <td><%= f.label :Serviço, "Tipo de serviço" %>
     <td class="col-md-9" ><%= f.text_field :servico %>
     </td>
     <tr> 
@@ -10,6 +10,6 @@
   </table>
   
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary btn-sm'%>
+    <%= f.submit "Submeter", class: 'btn btn-primary btn-sm'%>
   </div>
 <% end %>

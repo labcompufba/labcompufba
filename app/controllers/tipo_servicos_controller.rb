@@ -28,7 +28,7 @@ class TipoServicosController < ApplicationController
 
     respond_to do |format|
       if @tipo_servico.save
-        format.html { redirect_to @tipo_servico, notice: 'Tipo servico was successfully created.' }
+        format.html { redirect_to @tipo_servico, notice: 'O serviço foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @tipo_servico }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TipoServicosController < ApplicationController
   def update
     respond_to do |format|
       if @tipo_servico.update(tipo_servico_params)
-        format.html { redirect_to @tipo_servico, notice: 'Tipo servico was successfully updated.' }
+        format.html { redirect_to @tipo_servico, notice: 'O serviço foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @tipo_servico }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TipoServicosController < ApplicationController
   def destroy
     @tipo_servico.destroy
     respond_to do |format|
-      format.html { redirect_to tipo_servicos_url, notice: 'Tipo servico was successfully destroyed.' }
+      format.html { redirect_to tipo_servicos_url, notice: 'O serviço foi deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
