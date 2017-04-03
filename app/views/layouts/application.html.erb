@@ -15,6 +15,7 @@
  </div>
 
 <body>
+    <title>Laboratórios Compartilhados</title>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     
 <div class="navbar-collapse collapse"align="left">
@@ -47,13 +48,13 @@
 	 <a class="navbar-brand dropdown-toggle-left " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros
 	 <span class="caret"></span></a>
       <ul class="dropdown-menu" >
-        <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li>
+        <li> <a class="glyphicon glyphicon-hdd" href="/equipamentos"> <span class = "p">Equipamentos</span></a></li
         <li><a class="glyphicon glyphicon-home" href="/institutos"> <span class = "p"> Institutos</span></a></li>
         <li><a class="glyphicon glyphicon-book" href="/laboratorios"> <span class = "p"> Laboratórios</span></a></li>
         <% if can? :manage,@users %>
             <li><a class="glyphicon glyphicon-education" href="/programas"> <span class = "p"> Programas</span></a></li>
             <li><a class="glyphicon glyphicon-wrench" href="/tipo_servicos"> <span class = "p"> Serviços</span></a></li>
-           <li><a class="glyphicon glyphicon-list-alt" href="/manutentions"> <span class = "p"> Manutenção</span></a></li>
+            <li><a class="glyphicon glyphicon-list-alt" href="/manutentions"> <span class = "p"> Manutenção</span></a></li>
         <%end%>
       </ul>
     </div>
@@ -66,7 +67,7 @@
             <div class="container">
                 <div class="navbar-collapse collapse" id="footer-body">
                     <ul class="nav navbar-nav">
-                        <li><a href="/contacts/new">Contato</a></li>
+                       <!-- <li><a href="/contacts/new">Contato</a></li>-->
                         <li><a class ="nav navbar-nav pull-right" href="https://github.com/labcompufba/labcompufba" title="github" target="_blank"><i class="fa fa-github fa-2x"></i></a></li> 
                         <% if user_signed_in? %>
                              <li><a ><i class="fa fa-user fa"> Usuário Logado:<%= current_user.nome %></i></a></li> 
