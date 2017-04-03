@@ -67,12 +67,11 @@ class LabequipsController < ApplicationController
     respond_to do |format|
       if @labequip.update(labequip_params)
         if @labequip.manutencao == true
-          
              @users = User.where("admin=:admin",{admin:true})
              email = ""
              @users.each do |user|
                 email = user.email
- 	              HomeMailer.nova_manutencao(current_user.nome,'laboratorioscompartilhadosufba@gmail.com',@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now! 
+ 	              HomeMailer.nova_manutencao(current_user.nome,'laboratorioscompartilhadosufba@gmail.com',@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now!
   	         end
         end  
         format.html { redirect_to @labequip, notice: 'O equipamento foi atualizado com sucesso.' }
