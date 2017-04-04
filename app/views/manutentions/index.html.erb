@@ -19,7 +19,7 @@
         <td><%=formato_data(manutention.data_manutencao) %></td>
         <td><%= manutention.usuario_manutencao %></td>
         <td><%= manutention.fornecedor %></td>
-        <td><%= manutention.tiposervico.servico %></td>
+        <td><%= manutention.tipo_servico.servico%></td>
          <td class="actions">
             <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_manutention_path(manutention) %></a>
             <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', manutention, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
