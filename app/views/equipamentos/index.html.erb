@@ -29,7 +29,7 @@
                 <% @equipamentos.each do |equipamento| %>
                   <tr>
                     <td><%= equipamento.descricao %></td>
-                      <td><%= equipamento.valor_equip %></td>
+                      <td><%= valor_formatado(equipamento.valor_equip) %></td>
                       <td class="actions">
                       <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', equipamento %> </a>
                       <% if can? :pesq, Equipamento %>

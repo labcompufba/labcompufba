@@ -98,9 +98,16 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
   }
   
   
-  .navbar .nav.pull-left {
-     float: left;
+.navbar .nav.pull-left {
+    float: left;
     margin-left: 10px; /*set margin this way in your custom styesheet*/
+
+  }
+  
+
+  
+.navbar-brand{
+  color:#FF00FF;
   }
   
 .language {right:50px;position:absolute;}
