@@ -1,4 +1,4 @@
 class Manutention < ApplicationRecord
+    belongs_to :tiposervico
     has_many :manuequips
-    belongs_to :tipo_servico
 end

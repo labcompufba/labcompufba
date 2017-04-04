@@ -13,13 +13,13 @@
 <table >
    <col width="150">
    <tr>
-    <td><%= f.label :data_manutencao, "Data da manutenção" %></td>
+    <td><%= f.label :data_manutencao, "Data da Manutenção" %></td>
     <td><%= f.date_select :data_manutencao, start_year: 2017 %></td>
   </tr>
   <tr><td><br></td></tr>
   
   <tr>
-    <td><%= f.label :usuario_manutencao, "Usuário responsável" %></td>
+    <td><%= f.label :usuario_manutencao, "Usuário Responsável" %></td>
     <td><%= f.text_field :usuario_manutencao,:value =>current_user.nome, :readonly => true %></td>
   </tr>
   <tr><td><br></td></tr>
@@ -30,6 +30,12 @@
   </tr>
   <tr><td><br></td></tr>
 
+  <tr>
+    <td><%= f.label :Servico %></td>
+    <td><%= collection_select(:manutention, :id, @servicos, :id, :servico) %></td>
+  <tr>
+ <tr><td><br></td></tr>
+  
   <tr>
     <td> <%= f.label :baixa %></td>
      <td><%= f.check_box :baixa %></td>

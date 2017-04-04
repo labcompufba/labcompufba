@@ -5,6 +5,7 @@ class ManutentionsController < ApplicationController
   # GET /manutentions.json
   def index
     @manutentions = Manutention.all
+    @servicos = TipoServico.all
     
   end
 
@@ -16,10 +17,14 @@ class ManutentionsController < ApplicationController
   # GET /manutentions/new
   def new
     @manutention = Manutention.new
+    @servicos = TipoServico.all
+
   end
 
   # GET /manutentions/1/edit
   def edit
+    @manutention = Manutention.find(params[:id])
+    @servicos = TipoServico.all
   end
 
   # POST /manutentions
@@ -70,6 +75,6 @@ class ManutentionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manutention_params
-      params.require(:manutention).permit(:labequip_id, :data_manutencao, :usuario_manutencao, :baixa, :data_baixa,:fornecedor)
+      params.require(:manutention).permit(:labequip_id, :data_manutencao, :usuario_manutencao, :baixa, :tipo_servico_id, :data_baixa,:fornecedor)
     end
 end

@@ -22,6 +22,16 @@
     <tr> 
    <tr><td><br></td></tr>
    
+  
+    <tr>
+    <td>
+      <%= f.label :Valor  %>
+      <td class="col-md-9" ><%=  f.number_field :valor_equip, value: number_to_currency(f.object.valor_equip.to_f, delimiter: '', unit: ''), step: :any%></td>
+    </td>
+    <tr> 
+   <tr><td><br></td></tr>
+   
+   
     </table>
 
   <div class="actions">

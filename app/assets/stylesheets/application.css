@@ -94,7 +94,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
 .navbar .nav.pull-right {
      float: right;
-    margin-right: 730px; /*set margin this way in your custom styesheet*/
+    margin-right: 750px; /*set margin this way in your custom styesheet*/
   }
   
   
