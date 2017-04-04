@@ -19,13 +19,15 @@
 
     <tr>
       <td><b>Descrição</b></td>
-      <th colspan="1"></th>
+      <td><b>Valor</b></td>
+      <th colspan="2"></th>
     </tr>
     
     <% @equipamentos.each do |equipamento| %>
     <tr>
       <td><%= equipamento.descricao %></td>
-      <th colspan="1"></th>
+      <td><%= equipamento.valor_equip %></td>
+      <th colspan="2"></th>
     </tr>
     <% end %>
       

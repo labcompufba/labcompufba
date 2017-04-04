@@ -51,6 +51,8 @@
   </tbody>
 </table>
 
+
+ <a class="btn btn-default btn-sm" <%= link_to 'Imprimir', {:controller => "manuequips", :action => "index", :manutencao_id => params[:manutencao_id],:fornecedor => params['fornecedor'] ,:listar => params[:listar], format: :pdf}, target: '_blank' %></a> 
  <a class="btn btn-default btn-sm" <%= link_to 'Voltar', manutentions_path %></a>
    
 

@@ -10,6 +10,14 @@ class ManuequipsController < ApplicationController
        @manuequips = Labequip.where(" manutencao_id=:manutencao_id and manutencao = :manutencao",
        {manutencao:true,manutencao_id:false})
     end   
+    
+    respond_to do |format|
+      format.html
+
+      format.pdf { render pdf: "",
+        footer: { center: "[page] of [topage]" }
+      }
+    end        
   
   end
   
@@ -21,7 +29,11 @@ class ManuequipsController < ApplicationController
 
   # GET /manuequips/new
   def new
-    @manuequip = Manuequip.new
+    if can? :pesq, Manuequip
+       @manuequip = Manuequip.new
+    else
+       redirect_to manutentions_path
+    end
   end
 
   # GET /manuequips/1/edit

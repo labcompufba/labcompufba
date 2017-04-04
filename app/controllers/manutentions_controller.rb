@@ -7,6 +7,14 @@ class ManutentionsController < ApplicationController
     @manutentions = Manutention.all
     @servicos = TipoServico.all
     
+    respond_to do |format|
+      format.html
+
+      format.pdf { render pdf: "",
+        footer: { center: "[page] of [topage]" }
+      }
+    end        
+    
   end
 
   # GET /manutentions/1
@@ -16,15 +24,22 @@ class ManutentionsController < ApplicationController
 
   # GET /manutentions/new
   def new
-    @manutention = Manutention.new
-    @servicos = TipoServico.all
-
+    if can? :pesq, Manutention
+        @manutention = Manutention.new
+        @servicos = TipoServico.all
+    else
+        redirect_to manutentions_path
+    end    
   end
 
   # GET /manutentions/1/edit
   def edit
-    @manutention = Manutention.find(params[:id])
-    @servicos = TipoServico.all
+    if !(can? :pesq, Instituto)
+      redirect_to manutentions_path
+    else
+      @manutention = Manutention.find(params[:id])
+      @servicos = TipoServico.all
+    end
   end
 
   # POST /manutentions

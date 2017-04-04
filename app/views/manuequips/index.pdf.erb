@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>Relatório de Equipamentos da Manutenção</title>
+</head>
+
+<body>
+  <header>
+    <table>
+    <%@listar=params[:listar] %>        
+    <tr>
+      <td><%= wicked_pdf_image_tag 'images/brasao_ufba.jpg', :width => "50",  :height=>"90" %></td>
+      <td colspan="2"></td><center></center><td><b>Relatório de Equipamentos da Manutenção<td></b></center></td>
+    </tr>
+    </table>
+  </header>  
+  
+  <table class="table table-striped" cellspacing="0" cellpadding="0" width="100%" height="100" >
+    <tr>
+        <%if @listar=='false'%>
+          <td>Laboratório</td>
+          <td>Equipamento</td>
+          <td>Num. Tombamento</td>
+          <td>Manutenção</td>
+          <td colspan="4"></th>
+        <%else %>
+        <td>Equipamento</td>
+        <td>Num. Tombamento</td>
+        <td colspan="2"></th>
+        <%end%>
+      
+    </tr>
+    
+    <% @manuequips.each do |manuequip| %>
+    <tr>
+        <%if @listar=='true'%>
+          <td><%= manuequip.labequip.equipamento.descricao %></td>
+          <td><%= manuequip.labequip.numero_tombamento %></td>
+          <th colspan="2"></th>
+           <%else%>
+           <td><%= manuequip.laboratorio.sigla %></td>
+           <td><%= manuequip.equipamento.descricao %></td>
+           <td><%= manuequip.numero_tombamento %></td>
+           <td><input id="manutencao" name="manutencao" type="checkbox" disabled="disabled" <% if manuequip.manutencao %> checked <%end%> /></td>
+           <th colspan="4"></th>
+        <%end%>
+      
+    </tr>
+    <% end %>
+      
+  </table>  
+</body>
+</html>
