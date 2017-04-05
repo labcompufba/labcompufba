@@ -15,7 +15,7 @@ class ManuequipsController < ApplicationController
       format.html
 
       format.pdf { render pdf: "",
-        footer: { center: "[page] of [topage]" }
+        footer: { center: " Sistema de Laboratórios Compartilhados [page] of [topage]" }
       }
     end        
   
@@ -41,16 +41,18 @@ class ManuequipsController < ApplicationController
   end
 
 def incluir
+     @manutencao =  Manutention.where(id: params[:manutencao_id])
      @manuequip = Manuequip.new()
      @manuequip.manutencao_id  =  params[:manutencao_id]
      @manuequip.labequip_id    =  params[:labequip_id]
-    respond_to do |format|
-     @manuequip.save
+     respond_to do |format|
+      @manuequip.save
       format.html { redirect_to "/manuequips/", notice: 'Item adicionado!' }
-    end  
-    @labequip = Labequip.find(params[:labequip_id])
-    @labequip.update(manutencao_id: true)
+     end  
+     @labequip = Labequip.find(params[:labequip_id])
+     @labequip.update(manutencao_id: true)
 end 
+
 
   # POST /manuequips
   # POST /manuequips.json

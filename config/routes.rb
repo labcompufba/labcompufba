@@ -39,7 +39,12 @@ Rails.application.routes.draw do
    end
    
 
-
+ resources :manutentions do
+     member do
+       get 'baixa'=> 'manutentions#baixa'
+      end
+   end
+   
 
 
 end

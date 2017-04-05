@@ -11,6 +11,7 @@
       <th>Qtd.</th>
       <th>Num. Tombamento</th>
       <th>Manutenção</th>
+      <th>Status<th>
       <th colspan="5"></th>
     </tr>
   </thead>
@@ -23,13 +24,20 @@
         <td><%= labequip.quantidade %></td>
         <td><%= labequip.numero_tombamento %></td>
         <td><input id="manutencao" name="manutencao" type="checkbox" disabled="disabled" <% if labequip.manutencao %> checked <%end%> /></td>
+        <%if (labequip.manutencao == true) and (labequip.manutencao_id==true) %>
+           <td>Em Manutenção</td>
+        <%elsif (labequip.manutencao == true) and (labequip.manutencao_id==false) %>
+          <td>Solicitado Manutenção</td>
+        <%else %>
+           <td>Apt para uso </td>
+        <%end %>
+
         <td class="actions">
           <a class="btn btn-success btn-xs"<%= link_to 'Visualizar', labequip %> </a>
            <% if can? :pesq, Instituto %>
            <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_labequip_path(labequip) %></a>
            <a class="btn btn-danger btn-xs"  <%= link_to 'Deletar', labequip, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
            <%end%>  
-
         </td>
       </tr>
     <% end %>
@@ -37,13 +45,13 @@
 </table>
 <div class="text-center">
         <div class="pagination">
-        <table>
-          <tr>
-            <td ><%= paginate @labequips %></td>
-        <tr>
-      </table>
+          <table>
+            <tr>
+              <td ><%= paginate @labequips %></td>
+            <tr>
+         </table>
       </div>
-      </div>
+</div>
 
 <% if can? :pesq, Instituto %>
  <a class="btn btn-primary btn-sm" <%= link_to 'Novo Equipamento', {:controller => "labequips", :action => "new", :laboratorio_id => params[:laboratorio_id]} %></a> <br> <br>

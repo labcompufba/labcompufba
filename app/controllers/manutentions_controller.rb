@@ -42,6 +42,30 @@ class ManutentionsController < ApplicationController
     end
   end
 
+
+def baixa
+      @manutencao=  Manutention.find(params[:id])
+       respond_to do |format|
+          @manuequipss= Manuequip.where(manutencao_id: params[:manutencao_id])
+          @manuequipss.each do |manuequip|
+      
+              labequipid = manuequip.labequip_id
+              @labequip=  Labequip.where("id=:labequip_id",
+                                  {labequip_id:labequipid})
+             
+              #update na relação de laboratorio x equipamento
+              @labequip.update(manutencao_id: false)
+              @labequip.update(manutencao: false)   
+     	    end
+          #update na baixa
+          @manutencao.update(baixa: true)   
+          format.html { redirect_to "/manutentions/", notice: 'Baixa realizada com Sucesso! Os equipamentos estão aptos para utilização.'}
+       end 
+   
+end 
+
+
+
   # POST /manutentions
   # POST /manutentions.json
   def create

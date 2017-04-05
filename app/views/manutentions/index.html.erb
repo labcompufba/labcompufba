@@ -9,10 +9,10 @@
       <th>Usuário responsável</th>
       <th>Fornecedor</th>
       <th>Serviço</th>
+      <th>Situação</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @manutentions.each do |manutention| %>
       <tr>
@@ -20,11 +20,19 @@
         <td><%= manutention.usuario_manutencao %></td>
         <td><%= manutention.fornecedor %></td>
         <td><%= manutention.tipo_servico.servico%></td>
+         <% if manutention.baixa == true%>
+            <td>Baixado</td>
+          <% else%>  
+             <td>Aberto</td>
+          <% end%>  
          <td class="actions">
             <a class="btn btn-warning btn-xs"<%= link_to 'Editar', edit_manutention_path(manutention) %></a>
             <a class="btn btn-danger btn-xs" <%= link_to 'Deletar', manutention, method: :delete, data:{ confirm: 'Você tem certeza?' } %></a>
             <a class="btn btn-success btn-xs"<%= link_to 'Listar Equips', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id,:fornecedor =>manutention.fornecedor ,:listar =>true}%> </a>
-            <a class="btn btn-primary btn-xs"<%= link_to 'Adicionar', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id,:fornecedor =>manutention.fornecedor ,:listar =>false}%> </a>
+            <%if manutention.baixa == false %>
+              <a class="btn btn-primary btn-xs"<%= link_to 'Adicionar', {:controller => "manuequips", :action => "index", :manutencao_id => manutention.id,:fornecedor =>manutention.fornecedor ,:listar =>false}%> </a>
+              <a class="btn btn-default btn-xs"<%= link_to 'Baixar', baixa_manutention_path(manutention,:manutencao_id =>manutention.id,:listar=>false),data:{ confirm: 'Deseja realizar a baixa dos itens dessa manutenção?' }%> </a>        
+            <%end%>
           </td>
       </tr>
     <% end %>

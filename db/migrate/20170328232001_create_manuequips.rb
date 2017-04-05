@@ -4,7 +4,7 @@ class CreateManuequips < ActiveRecord::Migration[5.0]
       t.integer :manutencao_id
       t.integer :equipamento_id
       t.integer :labequip_id
-      t.boolean :baixa
+      t.boolean :baixa, :default => false
       t.timestamps
     end
   end
