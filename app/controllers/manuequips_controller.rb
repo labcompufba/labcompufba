@@ -53,7 +53,7 @@ def incluir
         email = ""
           @users.each do |user|
           email = user.email
-  	           HomeMailer.nova_manutencao(current_user.nome,email,@manuequips.equipamento.descricao,@manuequips.laboratorio.nome).deliver_now!
+  	           HomeMailer.inclusao_equip_manutencao(current_user.nome,email,@manuequips.equipamento.descricao,@manuequips.laboratorio.nome).deliver_now!
    	      end
          
       format.html { redirect_to "/manuequips/", notice: 'Item adicionado!' }
