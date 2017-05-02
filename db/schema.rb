@@ -54,19 +54,19 @@ ActiveRecord::Schema.define(version: 20170404162903) do
     t.integer  "manutencao_id"
     t.integer  "equipamento_id"
     t.integer  "labequip_id"
-    t.boolean  "baixa"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.boolean  "baixa",          default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "manutentions", force: :cascade do |t|
     t.date     "data_manutencao"
     t.string   "usuario_manutencao"
-    t.boolean  "baixa"
+    t.boolean  "baixa",              default: false
     t.date     "data_baixa"
     t.string   "fornecedor"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "tipo_servico_id"
   end
 
