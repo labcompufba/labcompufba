@@ -13,7 +13,7 @@ class HomeMailer < ApplicationMailer
     @email = email
     @equipamento = equipamento
     @laboratorio = laboratorio 
-    mail to: @email, from:'Sistema Laboratórios Compartilhados' ,subject: 'Equipamento em Manutenção.'
+    mail to: @email ,subject: 'Equipamento em Manutenção.'
   end
   
 end
