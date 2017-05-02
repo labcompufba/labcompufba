@@ -15,13 +15,12 @@
 - Professor Rodrigo Rocha
 
 ## Objetivos
-- A prosposta do projeto é o controle e manutenção dos insumos  dos laboratorios da UFBA.
+- A prosposta do projeto é o controle e manutenção dos insumos dos laboratórios da UFBA.
 
 ## Versao
-- Versão 1.1.1
+- Versão 1.2
 
 ## Colaboradores 
- - Elias Maciel da Silva
  - Kênia Guimarães
  - Luis Oscar Resende
  - Neyde Karen Botelho
