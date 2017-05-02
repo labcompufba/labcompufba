@@ -46,15 +46,21 @@ def incluir
      @manuequip.manutencao_id  =  params[:manutencao_id]
      @manuequip.labequip_id    =  params[:labequip_id]
      respond_to do |format|
-      @manuequip.save
-       @teste=  current_user.id.to_s
+       @manuequip.save
        @users = User.where("id=:id",{id:current_user.id})
-        email = ""
-          @users.each do |user|
+       @equip = Labequip.where(id: params[:labequip_id])
+       equip_desc = "" 
+       equip_lab  =""
+       email      = ""
+       @users.each do |user|
           email = user.email
-  	        #   HomeMailer.inclusao_equip_manutencao(current_user.nome,email,@manuequips.equipamento.descricao,@manuequips.laboratorio.nome).deliver_now!
-   	           HomeMailer.inclusao_equip_manutencao(current_user.nome,email,'DSDSDS','WEWEWEWE').deliver_now!
-   	      end
+          @equip.each do |equips|
+             equip_desc =  equips.equipamento.descricao
+             equip_lab = equips.laboratorio.nome
+          end 
+  	           HomeMailer.inclusao_equip_manutencao(current_user.nome,email,equip_desc,equip_lab).deliver_now!
+   	        
+   	   end
          
       format.html { redirect_to "/manuequips/", notice: 'Item adicionado!'}
      end  
@@ -73,8 +79,8 @@ end
      @manuequip.save
     format.html { redirect_to @manuequip, notice: 'Item adicionado!' }
     end  
-    @labequip = Labequip.find(params [:labequip_id])
-    @labequip.update(manutencao_id: true)
+  #  @labequip = Labequip.find(params [:labequip_id])
+   # @labequip.update(manutencao_id: true)
   end
 
 
