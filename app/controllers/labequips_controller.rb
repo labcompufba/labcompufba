@@ -68,6 +68,7 @@ class LabequipsController < ApplicationController
         if @labequip.manutencao == true
               @users = User.where("admin=:admin",{admin:true})
               email = ""
+              @labequip.update(usuario_manutencao_id: current_user.id )
               @users.each do |user|
                  email = user.email
   	              HomeMailer.nova_manutencao(current_user.nome,email,@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now!
@@ -100,6 +101,6 @@ class LabequipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def labequip_params
-      params.require(:labequip).permit(:laboratorio_id, :equipamento_id, :quantidade, :numero_tombamento,:manutencao)
+      params.require(:labequip).permit(:laboratorio_id, :equipamento_id, :quantidade, :numero_tombamento,:manutencao,:usuario_manutencao_id)
     end
 end

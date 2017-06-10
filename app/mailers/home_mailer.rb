@@ -9,7 +9,6 @@ class HomeMailer < ApplicationMailer
   end
   
   def inclusao_equip_manutencao(nome, email,equipamento,laboratorio)
-    @nome = nome
     @email = email
     @equipamento = equipamento
     @laboratorio = laboratorio 
