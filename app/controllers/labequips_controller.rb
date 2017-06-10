@@ -68,7 +68,6 @@ class LabequipsController < ApplicationController
         if @labequip.manutencao == true
               @users = User.where("admin=:admin",{admin:true})
               email = ""
-              @labequip.update(usuario_manutencao_id: current_user.id )
               @users.each do |user|
                  email = user.email
   	              HomeMailer.nova_manutencao(current_user.nome,email,@labequip.equipamento.descricao,@labequip.laboratorio.nome).deliver_now!
