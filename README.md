@@ -5,6 +5,7 @@
 
  - [Apresentação](#apresentacao)
  - [Objetivos](#objetivos)
+ - [Ferramentas](#ferramentas)
  - [Versão](#versao)
  - [Colaboradores](#colaboradores)
  - [Dicas](#dicas)
@@ -15,10 +16,17 @@
 - Professor Rodrigo Rocha
 
 ## Objetivos
-- A prosposta do projeto é o controle e manutenção dos insumos dos laboratórios da UFBA.
+- A prosposta do projeto é desenvolver uma solução que tem como objetivo o controle e manutenção dos insumos dos laboratórios de pós-gradução da UFBA.
+
+## Ferramentas
+- O projeto foi desenvovildo utilizando como base o pradão MVC
+- Framework Ruby on Rails
+- Banco de Dados Postgree
+- Servidor de aplicação Heroku
 
 ## Versao
-- Versão 1.2
+- Versão 1.3
+- Link para Versão da Teste do App: http://labcompufbateste.herokuapp.com/
 
 ## Colaboradores 
  - Kênia Guimarães
